@@ -202,7 +202,7 @@ echo ...............................................
 
 `rustdesk.exe --silent-install` yerine MSI yükleyicisini de kullanabilirsiniz:
 
-[/docs/tr/client/windows/msi/](/docs/tr/client/windows/msi/)
+Ayrıntılar için [Windows MSI Dağıtım Kılavuzu](/docs/tr/client/windows/msi/)'na bakın.
 
 ## macOS Bash
 

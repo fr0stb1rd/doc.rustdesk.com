@@ -94,13 +94,11 @@ Bu portlar hakkında daha fazla bilgi için lütfen [buraya](/docs/tr/self-host/
 
 ### 5, İstemciyi kendi sunucunuzu kullanacak şekilde yapılandırma
 
-[/docs/tr/self-host/client-configuration/](/docs/tr/self-host/client-configuration/)
+Ayrıntılı adımlar için [İstemci Yapılandırması](/docs/tr/self-host/client-configuration/) sayfasına bakın.
 
 ### 6, WebSocket Yapılandırması
 
-Web istemcisinin veya [masaüstü / mobil istemcinin](/docs/tr/self-host/client-configuration/advanced-settings/#allow-websocket) WebSocket ile düzgün çalışmasını sağlamak için ters proxy yapılandırmanıza gerekli ayarları eklemeniz gerekir:
-
-[/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme](/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme)
+Web istemcisinin veya [masaüstü / mobil istemcinin](/docs/tr/self-host/client-configuration/advanced-settings/#allow-websocket) WebSocket ile düzgün çalışmasını sağlamak için ters proxy yapılandırmanıza gerekli ayarları eklemeniz gerekir. Ayrıntılı kurulum için [Güvenli WebSocket (WSS) Yapılandırma Kılavuzu](/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme)'na bakın.
 
 ## Sunucuyu Yükseltme
 

@@ -115,7 +115,7 @@ Gelen bağlantılar için terminali etkinleştirir.
 
 **Konum**:
 
-**Desktop** Settings → Security → Permissions → Enable terminal
+1. **Masaüstü** Ayarlar → Security → Permissions → Enable terminal
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -307,7 +307,7 @@ Automatically close incoming sessions after a period of user inactivity.
 1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Automatically close incoming sessions on user inactivity
 2. **Mobil** Settings → Share screen → Automatically close incoming sessions on user inactivity
 
-| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| Seçenek | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
 | allow-auto-disconnect | N | Y, N | N | `allow-auto-disconnect=Y` |
 | auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
@@ -332,7 +332,7 @@ Accept incoming connections via password or manually click.
 **Konum**:
 
 1. **Masaüstü** Ayarlar → Güvenlik → Parola → Dropdown box
-2. **Mobil** Share screen → Dropdown menu on right-up corner
+2. **Mobil** Ekranı paylaş → Sağ üst köşedeki açılır menü
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -349,9 +349,9 @@ Hangi tür parolanın kullanılabileceğini belirler; `geçici parola` tek kulla
 ### temporary-password-length
 
 1. **Masaüstü** Ayarlar → Güvenlik → Parola → One-time password length
-2. **Mobil** Share screen → Dropdown menu on right-up corner → One-time password length
+2. **Mobil** Ekranı paylaş → Sağ üst köşedeki açılır menü → One-time password length
 
-The length of the temporary password.
+Geçici parolanın uzunluğu.
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -359,16 +359,16 @@ The length of the temporary password.
 
 ### proxy-url
 
-The proxy URL.
+Proxy URL'si.
 
-Currently support `http` and `socks5`.
+Şu anda `http` ve `socks5` desteklenmektedir.
 
 **Konum**:
 
 1. **Masaüstü** Ayarlar → Ağ → Proxy → Socks5/Http(s) proxy
 2. **Mobil**
 
-Examples:
+Örnekler:
 
 1. **http** `proxy-url=http://192.168.0.2:12345`
 2. **https** `proxy-url=https://192.168.0.2:12345`
@@ -383,7 +383,7 @@ Proxy username and password.
 1. **Masaüstü** Ayarlar → Ağ → Proxy → Socks5/Http(s) proxy
 2. **Mobil**
 
-| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| Seçenek | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
 | proxy-username | N | | | `proxy-username=user` |
 | proxy-password | N | | | `proxy-password=pass` |
@@ -569,7 +569,7 @@ Enable hardware encoding to make the picture smoother.
 
 **Konum**:
 
-1. **Desktop**
+1. **Masaüstü**
 2. **Mobil** Settings → Hardware codec
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -582,7 +582,7 @@ Controls the view of peer cards, includes "Big tiles", "Small tiles" and "List".
 
 **Konum**:
 
-1. **Desktop** Home → Peer panel → Right top grid icon
+1. **Masaüstü** Home → Peer panel → Right top grid icon
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -599,7 +599,7 @@ Controls the ordering of peer cards.
 
 **Konum**:
 
-1. **Desktop** Home → Peer panel → Right top sort icon
+1. **Masaüstü** Home → Peer panel → Right top sort icon
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -612,7 +612,7 @@ Adres defterinin son oturumlarla senkronize edilip edilmeyeceğini belirler.
 
 **Konum**:
 
-1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
+1. **Masaüstü** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
 2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -625,7 +625,7 @@ Adres defteri etiketlerinin sıralanıp sıralanmayacağını belirler.
 
 **Konum**:
 
-1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
+1. **Masaüstü** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
 2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -640,7 +640,7 @@ Filter address book by tag intersection.
 
 **Konum**:
 
-1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
+1. **Masaüstü** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
 2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -651,11 +651,11 @@ Filter address book by tag intersection.
 
 **Konum**:
 
-**Desktop** Settings → General → Other → Use texture render
+1. **Masaüstü** Ayarlar → General → Other → Use texture render
 
 Görüntüleri daha pürüzsüz hale getirmek için doku oluşturma (texture rendering) kullanır. Görüntüleme sorunlarıyla karşılaşırsanız bu seçeneği devre dışı bırakmayı deneyebilirsiniz. Only available on desktop.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
 
@@ -670,7 +670,7 @@ TCP delik açmayı (hole punching) etkinleştirir. Hem kendi barındırdığın�
 
 Available since RustDesk 1.5.0
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-tcp-punch=N` |
 
@@ -678,12 +678,12 @@ Available since RustDesk 1.5.0
 
 **Konum**:
 
-**Desktop** Settings → General → Other → Enable UDP hole punching
-**Mobile** Settings → Enable UDP hole punching
+1. **Masaüstü** Ayarlar → General → Other → Enable UDP hole punching
+2. **Mobil** Ayarlar → Enable UDP hole punching
 
 Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, otherwise:Y | `enable-udp-punch=N` |
 
@@ -691,12 +691,12 @@ Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
 **Konum**:
 
-**Desktop** Settings → General → Other → Enable IPv6 P2P connection
-**Mobile** Settings → General → Other → Enable IPv6 P2P connection
+1. **Masaüstü** Ayarlar → General → Other → Enable IPv6 P2P connection
+2. **Mobil** Ayarlar → General → Other → Enable IPv6 P2P connection
 
 Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, otherwise:Y | `enable-ipv6-punch=N` |
 
@@ -711,7 +711,7 @@ WebRTC P2P bağlantılarını etkinleştirir. UDP delik açma ve IPv6 P2P bağla
 
 Available since RustDesk 1.5.0, RustDesk Server Pro 1.8.7
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | selfhost:N, otherwise:Y | `enable-webrtc=Y` |
 
@@ -723,11 +723,11 @@ Yalnızca WebRTC etkinleştirildiğinde (`enable-webrtc`) geçerlidir. Masaüst�
 
 **Konum**:
 
-**Desktop** Settings → General → Other → Enable WebRTC P2P connection → Relay fallback delay in seconds
+1. **Masaüstü** Ayarlar → General → Other → Enable WebRTC P2P connection → Relay fallback delay in seconds
 
 Available since RustDesk 1.5.0
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Positive number of seconds, or empty | 2.5 | `relay-fallback-delay=2.5` |
 
@@ -1157,7 +1157,7 @@ Ardından her bir eşin ayarlarındaki "trackpad-speed" seçeneği, dokunmatik y
 Etiket belirlemek istemiyorsanız yalnızca preset-address-book-name ayarlayabilirsiniz.
 Lütfen web konsolunuzun adres defteri sayfasındaki geçerli bir adres defteri adını ve etiketini kullanın.
 
-| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| Seçenek | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
 | preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
 | preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
@@ -1171,7 +1171,7 @@ preset-address-book-alias, preset-address-book-password, preset-address-book-not
 
 RustDesk istemcisinde grup panelini (adres defteri panelinin yanındaki, 1.3.8 sürümünden itibaren "Erişilebilir cihazlar" olarak adlandırılan panel) devre dışı bırakır, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
 
-| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| Seçenek | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
 | disable-group-panel | N | Y, N | N | `disable-group-panel=Y` |
 
@@ -1179,7 +1179,7 @@ RustDesk istemcisinde grup panelini (adres defteri panelinin yanındaki, 1.3.8 s
 
 Taşınabilir Windows istemcisi çalıştırıldığında otomatik yetki yükseltme, https://github.com/rustdesk/rustdesk-server-pro/issues/252.
 
-| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| Seçenek | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
 | pre-elevate-service | N | Y, N | N | `pre-elevate-service=Y` |
 
@@ -1187,7 +1187,7 @@ Taşınabilir Windows istemcisi çalıştırıldığında otomatik yetki yüksel
 
 Android servisi başladığında, sistemin RustDesk servisini sonlandırmasını önlemeye yardımcı olan bir kayan pencere (floating window) görüntüler.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-floating-window=Y` |
 
@@ -1195,7 +1195,7 @@ Android servisi başladığında, sistemin RustDesk servisini sonlandırmasını
 
 Android servisi başladığında, sistemin RustDesk servisini sonlandırmasını önlemeye yardımcı olan bir kayan pencere (floating window) görüntüler. Boyut 120'den küçük olduğunda kayan pencereye tıklamak zorlaşacaktır. Çok küçük bir boyut bazı cihazlarda arka plan servisini ayakta tutamayabilir.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | [32, 320] | 120 | `floating-window-size=120` |
 
@@ -1203,7 +1203,7 @@ Android servisi başladığında, sistemin RustDesk servisini sonlandırmasını
 
 Varsayılan olarak, kayan pencereye tıklandığında bir menü açılır. 'untouchable' (dokunulmaz) olarak ayarlandıktan sonra, tıklama veya kaydırma işlemleri kayan pencerenin içinden geçerek alttaki pencereye iletilir. 'untouchable' olarak ayarlandıktan sonra kayan pencerenin konumu değiştirilemez ve sistem kayan pencereyi otomatik olarak yarı saydam hale getirebilir. Ancak bu özellik GitHub uygulaması gibi az sayıda uygulamada çalışmayabilir.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `floating-window-untouchable=Y` |
 
@@ -1211,7 +1211,7 @@ Varsayılan olarak, kayan pencereye tıklandığında bir menü açılır. 'unto
 
 Android kayan pencereleri ayarlanabilir saydamlığa sahiptir. Kayan pencereyi etkinleştirmek ancak gizlemek istiyorsanız saydamlığı 0 olarak ayarlayabilirsiniz; kayan pencere, tıklama olaylarını alta iletmek için otomatik olarak 'untouchable' durumuna getirilecektir.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | [0, 10] | 10 | `floating-window-transparency=5` |
 
@@ -1220,7 +1220,7 @@ Android kayan pencereleri ayarlanabilir saydamlığa sahiptir. Kayan pencereyi e
 Android kayan penceresi için bir simge ayarlanmazsa varsayılan olarak RustDesk simgesi görüntülenir.
 Ayar yaparken lütfen SVG'nin metin içeriğini tek bir satıra yazın ve [SVG destek sınırlamalarına](https://bigbadaboom.github.io/androidsvg/index.html) dikkat edin.
 
-| Default | Example |
+| Varsayılan | Örnek |
 | :------: | :------: |
 | RustDesk icon | `floating-window-svg=<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1717559129252" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4248" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M950.857143 512c0 242.285714-196.571429 438.857143-438.857143 438.857143S73.142857 754.285714 73.142857 512 269.714286 73.142857 512 73.142857s438.857143 196.571429 438.857143 438.857143z" fill="#1296db" p-id="4249"></path></svg>` |
 
@@ -1228,7 +1228,7 @@ Ayar yaparken lütfen SVG'nin metin içeriğini tek bir satıra yazın ve [SVG d
 
 Bu, Android kontrol edilen taraf içindir. Ekranın açık tutulmasının kayan pencereye bağlı olduğunu unutmayın.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
 
@@ -1236,7 +1236,7 @@ Bu, Android kontrol edilen taraf içindir. Ekranın açık tutulmasının kayan 
 
 Gelen uzak masaüstü oturumları sırasında ekranı uyanık tutar. Uygulama uzaktan bağlantılar için aktif olarak kullanılırken cihazın uyku moduna geçmesini önlemeye yardımcı olur.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `keep-awake-during-incoming-sessions=N` |
 
@@ -1244,7 +1244,7 @@ Gelen uzak masaüstü oturumları sırasında ekranı uyanık tutar. Uygulama uz
 
 Giden uzak masaüstü oturumları sırasında ekranı uyanık tutar. Uygulama uzaktan bağlantılar için aktif olarak kullanılırken cihazın uyku moduna geçmesini önlemeye yardımcı olur.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `keep-awake-during-outgoing-sessions=N` |
 
@@ -1252,7 +1252,7 @@ Giden uzak masaüstü oturumları sırasında ekranı uyanık tutar. Uygulama uz
 
 Bu, Windows kontrol edilen taraf içindir. Herhangi bir sorunla karşılaşmıyorsanız, doğrudan GDI kullanmak yerine ekran görüntüleri için DirectX kullanımına öncelik veren varsayılan ayarları kullanmanız önerilir.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-directx-capture=N` |
 
@@ -1260,7 +1260,7 @@ Bu, Windows kontrol edilen taraf içindir. Herhangi bir sorunla karşılaşmıyo
 
 Bu, Android kontrol edilen taraf içindir. Varsayılan olarak çözünürlük 1200'den büyük olduğunda, donanım kodlaması orijinal çözünürlüğü kullanırken yazılım kodlaması daha yavaş olduğundan yarı çözünürlüğü kullanır. Bu seçenek, yazılım kodlamasının yarı çözünürlüğe ölçeklendirilip ölçeklendirilmeyeceğini belirlemek için kullanılır.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-android-software-encoding-half-scale=N` |
 
@@ -1270,7 +1270,7 @@ Kontrol eden tarafın bağlantıları kabul etmek, izinleri değiştirmek vb. i�
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-remote-cm-modification=Y` |
 
@@ -1282,7 +1282,7 @@ Masaüstünde bu ayar kabul penceresindeki (bağlantı yönetim penceresi) tüm 
 
 **Preview**: https://github.com/rustdesk/rustdesk/pull/14875
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-perm-change-in-accept-window=Y` |
 
@@ -1294,7 +1294,7 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/286
 
 https://github.com/rustdesk/rustdesk/discussions/7956
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `remove-preset-password-warning=Y` |
 
@@ -1306,7 +1306,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/1001
 
 Available since RustDesk 1.5.0
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-general-settings=Y` |
 
@@ -1318,7 +1318,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/263
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/276
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-security-settings=Y` |
 
@@ -1328,7 +1328,7 @@ Cihazlar listesinde kullanıcı adının gösterilip gösterilmeyeceğini belirl
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-username-on-card=Y` |
 
@@ -1338,7 +1338,7 @@ Grafik arayüzde UAC / izin uyarılarının gösterilip gösterilmeyeceğini bel
 
 https://github.com/rustdesk/rustdesk/issues/8687
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-help-cards=Y` |
 
@@ -1352,7 +1352,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/277
 
 Yalnızca TCP kullanılıp kullanılmayacağını denetler. Artık UDP 21116 kullanılmaz, yerine TCP 21116 kullanılır.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-udp=Y` |
 
@@ -1378,7 +1378,7 @@ Güvenilen cihazların 2FA doğrulamasını atlamasına izin verir.
 
 https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `enable-trusted-devices=N` |
 
@@ -1388,7 +1388,7 @@ Sistem tepsisindeki (systray) tepsi simgesini devre dışı bırakır.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-tray=Y` |
 
@@ -1398,7 +1398,7 @@ Servis çalışırken servisi durdurma/açma-kapama kontrollerini gizler. Bu öz
 
 Servis durdurulduğunda başlatma/etkinleştirme girdisi görünür kalmaya devam eder.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `hide-stop-service=Y` |
 
@@ -1408,7 +1408,7 @@ Kontrol edilen taraftan kontrol eden tarafa pano senkronizasyonunu devre dışı
 
 https://github.com/rustdesk/rustdesk/discussions/7837
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `one-way-clipboard-redirection=Y` |
 
@@ -1418,7 +1418,7 @@ Kontrol edilen taraftan kontrol eden tarafa dosya aktarımını devre dışı b�
 
 https://github.com/rustdesk/rustdesk/discussions/7837
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `one-way-file-transfer=Y` |
 
@@ -1429,7 +1429,7 @@ Bağlantı kurulurken başlangıç panosunun senkronize edilip edilmeyeceğini b
 
 https://github.com/rustdesk/rustdesk/discussions/9010
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `sync-init-clipboard=Y` |
 
@@ -1441,7 +1441,7 @@ Etkinleştirildiğinde, geçerli oturum bir oturum açma veya kilit ekranı duru
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-logon-screen-password=Y` |
 
@@ -1451,7 +1451,7 @@ Genellikle HTTPS 443 bağlantı noktasını kullanır. API sunucusunun bağlant�
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-https-21114=Y` |
 
@@ -1459,7 +1459,7 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
 D3D oluşturma yüksek FPS sağlayabilir ve CPU kullanımını azaltabilir; ancak bazı cihazlarda uzaktan kontrol ekranı siyah kalabilir. RustDesk istemcisi >=1.3.9 sürümünde yalnızca Windows için kullanılabilir.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-d3d-render=Y` |
 
@@ -1469,7 +1469,7 @@ D3D oluşturma yüksek FPS sağlayabilir ve CPU kullanımını azaltabilir; anca
 
 Available in RustDesk client version 1.4.0 and later. 
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-hostname-as-id=Y` |
 
@@ -1477,14 +1477,14 @@ Available in RustDesk client version 1.4.0 and later.
 
 Sunucu ve istemciyi bağlamak için WebSocket protokolünü kullanır. Yalnızca RustDesk istemcisi >=1.4.0 ve Pro sunucusu >= 1.5.7 sürümünde kullanılabilir. WebSocket'in yalnızca relay bağlantısını desteklediğini unutmayın.
 
-WebSocket'in çalışması için ters proxy'nizi doğru yapılandırmanız gerekir, [/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme](/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme)
+WebSocket'in çalışması için ters proxy'nizi doğru yapılandırmanız gerekir: [Güvenli WebSocket (WSS) Yapılandırma Kılavuzu](/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme).
 
 **Konum**:
 
-**Desktop** Settings → Network → Use Websocket
-**Mobile** Settings → Use Websocket
+1. **Masaüstü** Ayarlar → Network → Use Websocket
+2. **Mobil** Ayarlar → Use Websocket
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-websocket=Y` |
 
@@ -1497,7 +1497,7 @@ Only available in RustDesk client >=1.4.1 and Pro server >= 1.5.9.
 
 **Preview**: https://github.com/rustdesk/rustdesk/pull/11846
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-numeric-one-time-password=Y` |
 
@@ -1516,7 +1516,7 @@ Cihazı kaydetmez, web konsolundaki cihazlar sayfasında göremezsiniz.
 
 **Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/672 and https://github.com/rustdesk/rustdesk-server-pro/discussions/182
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | Y | `register-device=N` |
 
@@ -1540,7 +1540,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-33065249
 
 Disable `Discovered` panel (next to `Favorites` panel) on RustDesk client
 
-| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| Seçenek | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
 | disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
 
@@ -1556,14 +1556,14 @@ Controls whether to use touch mode or mouse mode during remote control sessions.
 
 **Konum**:
 
-1. **Desktop**
+1. **Masaüstü**
 2. **Mobil** Settings → Display settings → Other default options → Touch mode
 
 ##### RustDesk (Controlling Side) >= 1.4.3
 
 Bu seçenek, bireysel cihaz ayarlarını geçersiz kılarak tüm eş cihazların dokunmatik mod mu yoksa fare modu mu kullanacağını tek tip olarak denetler.
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `touch-mode=Y` |
 
@@ -1575,12 +1575,12 @@ Mobil cihazdan masaüstüne bağlanırken sanal farenin gösterilmesini denetler
 
 **Konum**:
 
-1. **Desktop**
+1. **Masaüstü**
 2. **Mobil** Remote session -> bottom navigation bar -> gesture helper
 
 Available since RustDesk 1.4.3
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `show-virtual-mouse=Y` |
 
@@ -1596,12 +1596,12 @@ Bu seçenek **show-virtual-mouse** seçeneğinin etkinleştirilmesini gerektirir
 
 **Konum**:
 
-1. **Desktop**
+1. **Masaüstü**
 2. **Mobil** Remote session -> bottom navigation bar -> gesture helper
 
 Available since RustDesk 1.4.3
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `show-virtual-joystick=Y` |
 
@@ -1615,12 +1615,12 @@ Bu seçenek etkinleştirildiğinde RustDesk, doğrulama hatası durumunda doğru
 
 **Konum**:
 
-**Desktop** Settings → Network → Allow insecure TLS fallback
-**Mobile** Settings → Allow insecure TLS fallback
+1. **Masaüstü** Ayarlar → Network → Allow insecure TLS fallback
+2. **Mobil** Ayarlar → Allow insecure TLS fallback
 
 Available since RustDesk 1.4.4
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-insecure-tls-fallback=Y` |
 
@@ -1632,14 +1632,14 @@ Bu seçeneği istemci kullanıcı arayüzünden etkinleştirirseniz ve henüz ot
 
 **Konum**:
 
-1. **Desktop** Settings → Other → Ask for note at end of connection
+1. 1. **Masaüstü** Ayarlar → Other → Ask for note at end of connection
 2. **Mobil** Settings → Ask for note at end of connection
 
 Available since RustDesk 1.4.4.
 
 **Discussion**: https://github.com/rustdesk/rustdesk/discussions/14606
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-ask-for-note=Y` |
 
@@ -1649,7 +1649,7 @@ Kalıcı parolayı değiştirme yeteneğini devre dışı bırakır. Etkinleşti
 
 Available since RustDesk 1.4.5
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-change-permanent-password=Y` |
 
@@ -1659,7 +1659,7 @@ Cihaz kimliğini (ID) değiştirme yeteneğini devre dışı bırakır. Etkinle�
 
 Available since RustDesk 1.4.5
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-change-id=Y` |
 
@@ -1669,7 +1669,7 @@ Ayarların kilidini açmak için PIN kullanımını devre dışı bırakır. Etk
 
 Available since RustDesk 1.4.5
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `disable-unlock-pin=Y` |
 
@@ -1679,6 +1679,6 @@ Available since RustDesk 1.4.5
 
 Available since RustDesk 1.4.7
 
-| Values | Default | Example |
+| Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
 | Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
