@@ -41,3 +41,11 @@ searchPlaceholder: "Ara..."
 system: "Sistem"
 tags: "Etiketler"
 viewAsMarkdown: "Markdown olarak görüntüle"
+
+# Uyarı ve bildirim başlıkları (Alert / Callout titles)
+note: "Not"
+tip: "İpucu"
+important: "Önemli"
+warning: "Uyarı"
+caution: "Dikkat"
+info: "Bilgi"
