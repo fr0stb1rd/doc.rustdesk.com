@@ -62,7 +62,7 @@ Gelen bağlantılar için klavye/fare girişini etkinleştirir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable keyboard
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Klavyeyi etkinleştir
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -75,7 +75,7 @@ Gelen bağlantılar için kopyala ve yapıştırı etkinleştirir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable clipboard
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Panoyu etkinleştir
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -88,7 +88,7 @@ Gelen bağlantılar için dosya kopyala/yapıştırı veya dosya aktarımı (otu
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable file transfer
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Dosya aktarımını etkinleştir
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -102,7 +102,7 @@ Gelen bağlantılar için kamerayı etkinleştirir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable camera
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Kamerayı etkinleştir
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -115,7 +115,7 @@ Gelen bağlantılar için terminali etkinleştirir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Security → Permissions → Enable terminal
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Terminali etkinleştir
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -127,7 +127,7 @@ Gelen bağlantılar için uzak yazıcıyı etkinleştirir.
 
 **Konum**:
 
-1. **Windows** Settings → Security → Permissions → Enable remote printer
+1. **Windows** Ayarlar → Güvenlik → İzinler → Uzak yazıcıyı etkinleştir
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -139,7 +139,7 @@ Ses kaydını ve eşe aktarılmasını etkinleştirir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable audio
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Sesi etkinleştir
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -152,7 +152,7 @@ TCP tünellemeyi etkinleştirir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable TCP tunneling
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → TCP tünellemesini etkinleştir
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -165,7 +165,7 @@ Kontrol eden tarafça yeniden başlatılabilmeyi etkinleştirir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable remote restart
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Uzaktan yeniden başlatmayı etkinleştir
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -178,8 +178,8 @@ Enable sessions to be recorded.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable recording session
-2. **Mobil** Settings → Share screen → Enable recording session
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Oturum kaydını etkinleştir
+2. **Mobil** Ayarlar → Ekranı paylaş → Oturum kaydını etkinleştir
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -191,7 +191,7 @@ Enable the control side to block other users' input.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable blocking user input (Windows only)
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Kullanıcı girişini engellemeyi etkinleştir (yalnızca Windows)
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -206,7 +206,7 @@ Bu ayar [`privacy-mode`](#privacy-mode) ayarından farklıdır: o ayar ilk bağl
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable privacy mode
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Gizlilik modunu etkinleştir
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -218,7 +218,7 @@ Kontrol eden tarafın, kontrol edilen RustDesk kullanıcı arayüzündeki ayarla
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable remote configuration modification
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Uzaktan yapılandırma değişikliğini etkinleştir
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -233,8 +233,8 @@ LAN keşfinden sonra, yerel olarak destekleniyorsa [WOL](https://en.wikipedia.or
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Deny LAN discovery
-2. **Mobil** Settings → Share screen → Deny LAN discovery
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → LAN keşfini reddet
+2. **Mobil** Ayarlar → Ekranı paylaş → LAN keşfini reddet
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -242,12 +242,12 @@ LAN keşfinden sonra, yerel olarak destekleniyorsa [WOL](https://en.wikipedia.or
 
 ### direct-server
 
-Enable direct IP access.
+Doğrudan IP erişimini etkinleştir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Enable direct IP access
-2. **Mobil** Settings → Share screen → Direct IP access
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Doğrudan IP erişimini etkinleştir
+2. **Mobil** Ayarlar → Ekranı paylaş → Doğrudan IP erişimi
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -259,8 +259,8 @@ Doğrudan IP erişim portu.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Direct IP access port (Show if "Enable direct IP access" is checked)
-2. **Mobil** Settings → Share screen → Direct IP access
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Doğrudan IP erişimi port ("Doğrudan IP erişimini etkinleştir" işaretliyse görünür)
+2. **Mobil** Ayarlar → Ekranı paylaş → Doğrudan IP erişimi
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -268,12 +268,12 @@ Doğrudan IP erişim portu.
 
 ### whitelist
 
-Use IP Whitelisting.
+IP Beyaz Listesini Kullan.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Use IP Whitelisting
-2. **Mobil** Settings → Share screen → Use IP Whitelisting
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → IP Beyaz Listesini Kullan
+2. **Mobil** Ayarlar → Ekranı paylaş → IP Beyaz Listesini Kullan
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -291,8 +291,8 @@ Joker karakterler desteklenir: `*` herhangi bir sayıda karakterle eşleşir, `?
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Use ID whitelisting
-2. **Mobil** Settings → Share screen → Use ID whitelisting
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Kimlik (ID) Beyaz Listesini Kullan
+2. **Mobil** Ayarlar → Ekranı paylaş → Kimlik (ID) Beyaz Listesini Kullan
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek | Version |
 | :------: | :------: | :------: | :------: | :------: |
@@ -304,8 +304,8 @@ Automatically close incoming sessions after a period of user inactivity.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Automatically close incoming sessions on user inactivity
-2. **Mobil** Settings → Share screen → Automatically close incoming sessions on user inactivity
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Kullanıcı hareketsizliğinde gelen oturumları otomatik kapat
+2. **Mobil** Ayarlar → Ekranı paylaş → Kullanıcı hareketsizliğinde gelen oturumları otomatik kapat
 
 | Seçenek | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
@@ -314,11 +314,11 @@ Automatically close incoming sessions after a period of user inactivity.
 
 ### allow-only-conn-window-open
 
-Only allow connection if RustDesk window is open.
+Yalnızca RustDesk penceresi açıksa bağlantıya izin ver.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Only allow connection if RustDesk window is open
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Yalnızca RustDesk penceresi açıksa bağlantıya izin ver
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -331,7 +331,7 @@ Accept incoming connections via password or manually click.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Güvenlik → Parola → Dropdown box
+1. **Masaüstü** Ayarlar → Güvenlik → Parola → Açılır kutu
 2. **Mobil** Ekranı paylaş → Sağ üst köşedeki açılır menü
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -348,8 +348,8 @@ Hangi tür parolanın kullanılabileceğini belirler; `geçici parola` tek kulla
 
 ### temporary-password-length
 
-1. **Masaüstü** Ayarlar → Güvenlik → Parola → One-time password length
-2. **Mobil** Ekranı paylaş → Sağ üst köşedeki açılır menü → One-time password length
+1. **Masaüstü** Ayarlar → Güvenlik → Parola → Tek kullanımlık parola uzunluğu
+2. **Mobil** Ekranı paylaş → Sağ üst köşedeki açılır menü → Tek kullanımlık parola uzunluğu
 
 Geçici parolanın uzunluğu.
 
@@ -396,8 +396,8 @@ Controls the UI theme of RustDesk client.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Theme
-2. **Mobil** Settings → Settings → Theme
+1. **Masaüstü** Ayarlar → Genel → Tema
+2. **Mobil** Ayarlar → Ayarlar → Tema
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -409,8 +409,8 @@ Controls the language of RustDesk client.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Language
-2. **Mobil** Settings → Settings → Language
+1. **Masaüstü** Ayarlar → Genel → Dil
+2. **Mobil** Ayarlar → Ayarlar → Dil
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -428,8 +428,8 @@ Gelen oturumları otomatik olarak kaydeder.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Recording → Automatically record incoming sessions
-2. **Mobil** Settings → Recording → Automatically record incoming sessions
+1. **Masaüstü** Ayarlar → Genel → Kayıt → Gelen oturumları otomatik kaydet
+2. **Mobil** Ayarlar → Kayıt → Gelen oturumları otomatik kaydet
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -441,8 +441,8 @@ Giden oturumları otomatik olarak kaydeder.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Recording → Automatically record outgoing sessions
-2. **Mobil** Settings → Recording → Automatically record outgoing sessions
+1. **Masaüstü** Ayarlar → Genel → Kayıt → Giden oturumları otomatik kaydet
+2. **Mobil** Ayarlar → Kayıt → Giden oturumları otomatik kaydet
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek | Version |
 | :------: | :------: | :------: | :------: | :------: |
@@ -464,8 +464,8 @@ Yüklü Windows servisi tarafından yapılan kontrol edilen taraf kayıtları i�
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Recording → Video save directory
-2. **Mobil** Settings → Recording
+1. **Masaüstü** Ayarlar → Genel → Kayıt → Video kayıt dizini
+2. **Mobil** Ayarlar → Kayıt
 
 Varsayılan değerler:
 
@@ -492,7 +492,7 @@ Bu ayar yalnızca Windows üzerinde Bağlantı türü Çift Yönlü veya Gelen o
 
 **Konum**:
 
-1. **Windows** Settings → General → Other → Auto update
+1. **Windows** Ayarlar → Genel → Diğerleri → Otomatik güncelleme
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek | Version |
 | :------: | :------: | :------: | :------: | :------: |
@@ -504,7 +504,7 @@ Tüm uzak sekmeleri kapatmadan önce bir onay iletişim kutusu gösterilip göst
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Other → Confirm before closing multiple tabs
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → Birden çok sekmeyi kapatmadan önce onayla
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -517,8 +517,8 @@ Enable adaptive bitrate.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Other → Adaptive bitrate
-2. **Mobil** Settings → Share screen → Adaptive bitrate (beta)
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → Uyarlanabilir bit hızı
+2. **Mobil** Ayarlar → Ekranı paylaş → Uyarlanabilir bit hızı (beta)
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -526,11 +526,11 @@ Enable adaptive bitrate.
 
 ### allow-remove-wallpaper
 
-Remove wallpaper during incoming sessions.
+Gelen oturumlarda duvar kağıdını kaldır.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Other → Remove wallpaper during incoming sessions
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → Gelen oturumlarda duvar kağıdını kaldır
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -543,7 +543,7 @@ Yeni bir bağlantı açmak için yeni bir sekmenin mi yoksa yeni bir pencerenin 
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Other → Open connection in new tab
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → Bağlantıyı yeni sekmede aç
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -552,11 +552,11 @@ Yeni bir bağlantı açmak için yeni bir sekmenin mi yoksa yeni bir pencerenin 
 
 ### allow-always-software-render
 
-Always use software rendering.
+Her zaman yazılım tabanlı oluşturmayı kullan.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Other → Always use software rendering
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → Her zaman yazılım tabanlı oluşturmayı kullan
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -570,7 +570,7 @@ Enable hardware encoding to make the picture smoother.
 **Konum**:
 
 1. **Masaüstü**
-2. **Mobil** Settings → Hardware codec
+2. **Mobil** Ayarlar → Donanım kodeği
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -582,7 +582,7 @@ Controls the view of peer cards, includes "Big tiles", "Small tiles" and "List".
 
 **Konum**:
 
-1. **Masaüstü** Home → Peer panel → Right top grid icon
+1. **Masaüstü** Ana Sayfa → Eş paneli → Sağ üst ızgara simgesi
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -599,7 +599,7 @@ Controls the ordering of peer cards.
 
 **Konum**:
 
-1. **Masaüstü** Home → Peer panel → Right top sort icon
+1. **Masaüstü** Ana Sayfa → Eş paneli → Sağ üst sıralama simgesi
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -612,8 +612,8 @@ Adres defterinin son oturumlarla senkronize edilip edilmeyeceğini belirler.
 
 **Konum**:
 
-1. **Masaüstü** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
-2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
+1. **Masaüstü** Ana Sayfa → Eş paneli → Adres defteri → Etiketler → Açılır menü → Son oturumlarla eşitle
+2. **Mobil** Ana Sayfa → Eş paneli → Adres defteri → Etiketler → Açılır menü → Son oturumlarla eşitle
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -625,8 +625,8 @@ Adres defteri etiketlerinin sıralanıp sıralanmayacağını belirler.
 
 **Konum**:
 
-1. **Masaüstü** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
-2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
+1. **Masaüstü** Ana Sayfa → Eş paneli → Adres defteri → Etiketler → Açılır menü → Etiketleri sırala
+2. **Mobil** Ana Sayfa → Eş paneli → Adres defteri → Etiketler → Açılır menü → Etiketleri sırala
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -640,8 +640,8 @@ Filter address book by tag intersection.
 
 **Konum**:
 
-1. **Masaüstü** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
-2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
+1. **Masaüstü** Ana Sayfa → Eş paneli → Adres defteri → Etiketler → Açılır menü → Kesişime göre filtrele
+2. **Mobil** Ana Sayfa → Eş paneli → Adres defteri → Etiketler → Açılır menü → Kesişime göre filtrele
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -651,7 +651,7 @@ Filter address book by tag intersection.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → General → Other → Use texture render
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → Doku oluşturma kullan
 
 Görüntüleri daha pürüzsüz hale getirmek için doku oluşturma (texture rendering) kullanır. Görüntüleme sorunlarıyla karşılaşırsanız bu seçeneği devre dışı bırakmayı deneyebilirsiniz. Only available on desktop.
 
@@ -665,8 +665,8 @@ TCP delik açmayı (hole punching) etkinleştirir. Hem kendi barındırdığın�
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Other → Enable TCP hole punching
-2. **Mobil** Settings → Enable TCP hole punching
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → TCP delik açmayı etkinleştir
+2. **Mobil** Ayarlar → TCP delik açmayı etkinleştir
 
 Available since RustDesk 1.5.0
 
@@ -678,8 +678,8 @@ Available since RustDesk 1.5.0
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → General → Other → Enable UDP hole punching
-2. **Mobil** Ayarlar → Enable UDP hole punching
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → UDP delik açmayı etkinleştir
+2. **Mobil** Ayarlar → UDP delik açmayı etkinleştir
 
 Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
@@ -691,8 +691,8 @@ Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → General → Other → Enable IPv6 P2P connection
-2. **Mobil** Ayarlar → General → Other → Enable IPv6 P2P connection
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → IPv6 P2P bağlantısını etkinleştir
+2. **Mobil** Ayarlar → Genel → Diğerleri → IPv6 P2P bağlantısını etkinleştir
 
 Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
@@ -706,8 +706,8 @@ WebRTC P2P bağlantılarını etkinleştirir. UDP delik açma ve IPv6 P2P bağla
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Genel → Other → Enable WebRTC P2P connection
-2. **Mobil** Settings → Enable WebRTC P2P connection
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → WebRTC P2P bağlantısını etkinleştir
+2. **Mobil** Ayarlar → WebRTC P2P bağlantısını etkinleştir
 
 Available since RustDesk 1.5.0, RustDesk Server Pro 1.8.7
 
@@ -723,7 +723,7 @@ Yalnızca WebRTC etkinleştirildiğinde (`enable-webrtc`) geçerlidir. Masaüst�
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → General → Other → Enable WebRTC P2P connection → Relay fallback delay in seconds
+1. **Masaüstü** Ayarlar → Genel → Diğerleri → WebRTC P2P bağlantısını etkinleştir → Saniye cinsinden aktarıma geri dönüş gecikmesi
 
 Available since RustDesk 1.5.0
 
@@ -741,8 +741,8 @@ Ardından her bir eşin ayarlarındaki "view-only" seçeneği, bağlantının ya
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → View mode
-2. **Mobil** Settings → Display settings → Other default options → View mode
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Görüntüleme modu
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Görüntüleme modu
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -756,7 +756,7 @@ Araç çubuğunda monitörlerin gösterilip gösterilmeyeceğini belirler.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Show monitors toolbar
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Monitörler araç çubuğunu göster
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -769,7 +769,7 @@ Bağlantı kurulduktan sonra uzak araç çubuğunun daraltılıp daraltılmayaca
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Collapse toolbar
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Araç çubuğunu daralt
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -784,8 +784,8 @@ Ardından her bir eşin ayarlarındaki "show-remote-cursor" seçeneği, uzaktan 
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Show remote cursor
-2. **Mobil** Settings → Display settings → Other default options → Show remote cursor
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Uzak imleci göster
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Uzak imleci göster
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -801,8 +801,8 @@ Ardından her bir eşin ayarlarındaki "follow-remote-cursor" seçeneği, uzak i
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Follow remote cursor
-2. **Mobil** Settings → Display settings → Other default options → Follow remote cursor
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Uzak imleci takip et
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Uzak imleci takip et
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -818,8 +818,8 @@ Ardından her bir eşin ayarlarındaki "follow-remote-window" seçeneği, uzak p
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Follow remote window focus
-2. **Mobil** Settings → Display settings → Other default options → Follow remote window focus
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Uzak pencere odağını takip et
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Uzak pencere odağını takip et
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -833,7 +833,7 @@ Ardından her bir eşin ayarlarındaki "zoom-cursor" seçeneği, imlecin uzak ç
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Zoom cursor
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → İmleci yakınlaştır
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -848,8 +848,8 @@ Ardından her bir eşin ayarlarındaki "show-quality-monitor" seçeneği, kalite
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Show quality monitor
-2. **Mobil** Settings → Display settings → Other default options → Show quality monitor
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Kalite izleyicisini göster
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Kalite izleyicisini göster
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -863,8 +863,8 @@ Ardından her bir eşin ayarlarındaki "disable-audio" seçeneği, sesin çalın
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Mute
-2. **Mobil** Settings → Display settings → Other default options → Mute
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Sesi kapat
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Sesi kapat
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -878,7 +878,7 @@ Ardından her bir eşin ayarlarındaki "enable-file-copy-paste" seçeneği, dosy
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Enable file copy and paste (Windows only)
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Dosya kopyalama ve yapıştırmayı etkinleştir (yalnızca Windows)
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -893,8 +893,8 @@ Ardından her bir eşin ayarlarındaki "disable-clipboard" seçeneği, metin kop
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Disable clipboard
-2. **Mobil** Settings → Display settings → Other default options → Disable clipboard
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Panoyu devre dışı bırak
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Panoyu devre dışı bırak
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -908,8 +908,8 @@ Ardından her bir eşin ayarlarındaki "lock-after-session-end" seçeneği, otur
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Lock after session end
-2. **Mobil** Settings → Display settings → Other default options → Lock after session end
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Oturum bittikten sonra kilitle
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Oturum bittikten sonra kilitle
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -923,8 +923,8 @@ Ardından her bir eşin ayarlarındaki "privacy-mode" seçeneği, ilk bağlantı
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Privacy mode
-2. **Mobil** Settings → Display settings → Other default options → Privacy mode
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Gizlilik modu
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Gizlilik modu
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -938,8 +938,8 @@ Ardından her bir eşin ayarlarındaki "i444" seçeneği, gerçek rengin (true c
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → True color (4:4:4)
-2. **Mobil** Settings → Display settings → Other default options → True color (4:4:4)
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Gerçek renk (4:4:4)
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Gerçek renk (4:4:4)
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -953,8 +953,8 @@ Ardından her bir eşin ayarlarındaki "reverse-mouse-wheel" seçeneği, fare te
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Reverse mouse wheel
-2. **Mobil** Settings → Display settings → Other default options → Reverse mouse wheel
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Fare tekerleğini ters çevir
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Fare tekerleğini ters çevir
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -968,8 +968,8 @@ Ardından her bir eşin ayarlarındaki "swap-left-right-mouse" seçeneği, sol-s
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Swap left-right mouse button
-2. **Mobil** Settings → Display settings → Other default options → Swap left-right mouse button
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Sol-sağ fare düğmelerini değiştir
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Sol-sağ fare düğmelerini değiştir
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -985,7 +985,7 @@ Ardından her bir eşin ayarlarındaki "displays-as-individual-windows" seçene�
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Show displays as individual windows
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Ekranları ayrı pencereler olarak göster
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -1002,7 +1002,7 @@ Ardından her bir eşin ayarlarındaki "use-all-my-displays-for-the-remote_sessi
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Use all my displays for the remote session
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Uzak oturum için tüm ekranlarımı kullan
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -1017,8 +1017,8 @@ Ardından her bir eşin ayarlarındaki "view-style" seçeneği görüntüleme st
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Default view style
-2. **Mobil** Settings → Display settings → Default view style
+1. **Masaüstü** Ayarlar → Ekran → Varsayılan görüntüleme stili
+2. **Mobil** Ayarlar → Ekran ayarları → Varsayılan görüntüleme stili
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -1032,7 +1032,7 @@ Ardından her bir eşin ayarlarındaki "scroll-style" seçeneği kaydırma stili
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Default scroll style
+1. **Masaüstü** Ayarlar → Ekran → Varsayılan kaydırma stili
 2. **Mobil**
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
@@ -1049,7 +1049,7 @@ Bu seçenek yalnızca `scroll-style=scrolledge` olduğunda geçerlidir.
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Edge scroll edge thickness
+1. **Masaüstü** Ayarlar → Ekran → Kenar kaydırma kenar kalınlığı
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -1065,8 +1065,8 @@ Ardından her bir eşin ayarlarındaki "image-quality" seçeneği görüntü kal
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Default image quality
-2. **Mobil** Settings → Display settings → Default image quality
+1. **Masaüstü** Ayarlar → Ekran → Varsayılan görüntü kalitesi
+2. **Mobil** Ayarlar → Ekran ayarları → Varsayılan görüntü kalitesi
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -1080,8 +1080,8 @@ Ardından her bir eşin ayarlarındaki "custom-image-quality" seçeneği, "image
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Default image quality → Custom
-2. **Mobil** Settings → Display settings → Default image quality → Custom
+1. **Masaüstü** Ayarlar → Ekran → Varsayılan görüntü kalitesi → Özel
+2. **Mobil** Ayarlar → Ekran ayarları → Varsayılan görüntü kalitesi → Özel
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -1095,8 +1095,8 @@ Ardından her bir eşin ayarlarındaki "custom-fps" seçeneği, "image-quality" 
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Default image quality → Custom
-2. **Mobil** Settings → Display settings → Default image quality → Custom
+1. **Masaüstü** Ayarlar → Ekran → Varsayılan görüntü kalitesi → Özel
+2. **Mobil** Ayarlar → Ekran ayarları → Varsayılan görüntü kalitesi → Özel
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -1110,8 +1110,8 @@ Ardından her bir eşin ayarlarındaki "codec-preference" seçeneği görüntül
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Default codec
-2. **Mobil** Settings → Display settings → Default codec
+1. **Masaüstü** Ayarlar → Ekran → Varsayılan kodek
+2. **Mobil** Ayarlar → Ekran ayarları → Varsayılan kodek
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -1127,8 +1127,8 @@ Ardından her bir eşin ayarlarındaki "terminal-persistent" seçeneği, termina
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Other default options → Keep terminal sessions on disconnect
-2. **Mobil** Settings → Display settings → Other default options → Keep terminal sessions on disconnect
+1. **Masaüstü** Ayarlar → Ekran → Diğer varsayılan seçenekler → Bağlantı kesildiğinde terminal oturumlarını koru
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Bağlantı kesildiğinde terminal oturumlarını koru
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -1142,8 +1142,8 @@ Ardından her bir eşin ayarlarındaki "trackpad-speed" seçeneği, dokunmatik y
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Ekran → Default trackpad speed
-2. **Mobil** Settings → Display settings → Default trackpad speed
+1. **Masaüstü** Ayarlar → Ekran → Varsayılan dokunmatik yüzey hızı
+2. **Mobil** Ayarlar → Ekran ayarları → Varsayılan dokunmatik yüzey hızı
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -1358,7 +1358,7 @@ Yalnızca TCP kullanılıp kullanılmayacağını denetler. Artık UDP 21116 kul
 
 ### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
 
-Cihaza kullanıcı / strateji / cihaz grubu / cihaz kullanıcı adı / cihaz adı (ana bilgisayar adı) / not atayın. Bunu [komut satırı](/docs/tr/self-host/rustdesk-server-pro/console/#cihazları-görüntüleme) üzerinden de yapabilirsiniz.
+Cihaza kullanıcı / strateji / cihaz grubu / cihaz kullanıcı adı / cihaz adı (ana bilgisayar adı) / not atayın. Bunu [komut satırı](/docs/tr/self-host/rustdesk-server-pro/console/#komut-satırından-belirteç-ile-atama-yapma) üzerinden de yapabilirsiniz.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
@@ -1481,8 +1481,8 @@ WebSocket'in çalışması için ters proxy'nizi doğru yapılandırmanız gerek
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Network → Use Websocket
-2. **Mobil** Ayarlar → Use Websocket
+1. **Masaüstü** Ayarlar → Ağ → WebSocket Kullan
+2. **Mobil** Ayarlar → WebSocket Kullan
 
 | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: |
@@ -1557,7 +1557,7 @@ Controls whether to use touch mode or mouse mode during remote control sessions.
 **Konum**:
 
 1. **Masaüstü**
-2. **Mobil** Settings → Display settings → Other default options → Touch mode
+2. **Mobil** Ayarlar → Ekran ayarları → Diğer varsayılan seçenekler → Dokunmatik mod
 
 ##### RustDesk (Controlling Side) >= 1.4.3
 
@@ -1615,8 +1615,8 @@ Bu seçenek etkinleştirildiğinde RustDesk, doğrulama hatası durumunda doğru
 
 **Konum**:
 
-1. **Masaüstü** Ayarlar → Network → Allow insecure TLS fallback
-2. **Mobil** Ayarlar → Allow insecure TLS fallback
+1. **Masaüstü** Ayarlar → Ağ → Güvenli olmayan TLS geri dönüşüne izin ver
+2. **Mobil** Ayarlar → Güvenli olmayan TLS geri dönüşüne izin ver
 
 Available since RustDesk 1.4.4
 
@@ -1632,8 +1632,8 @@ Bu seçeneği istemci kullanıcı arayüzünden etkinleştirirseniz ve henüz ot
 
 **Konum**:
 
-1. 1. **Masaüstü** Ayarlar → Other → Ask for note at end of connection
-2. **Mobil** Settings → Ask for note at end of connection
+1. **Masaüstü** Ayarlar → Diğerleri → Bağlantı sonunda not iste
+2. **Mobil** Ayarlar → Bağlantı sonunda not iste
 
 Available since RustDesk 1.4.4.
 

@@ -159,7 +159,7 @@ Desteklenen Parametreler
 | `--note <note>`                         | Cihaza not ekler                  | 1.6.6               | 1.4.3           |
 | `--device_username <device_username>`   | Cihaz kullanıcı adını belirler                 | 1.6.6               | 1.4.3           |
 | `--device_name <device_name>`           | Cihaz adını belirler                     | 1.6.6               | 1.4.3           |
-| [`--deploy`](/docs/tr/self-host/client-deployment/#explicit-deployment-for-new-devices) | Register a new device when **Require deployment for new devices** is enabled. Requires an API token with **Devices** permission set to **Read and write**. | 1.8.3 | 1.4.7 |
+| [`--deploy`](/docs/tr/self-host/client-deployment/#yeni-cihazlar-için-açıkça-dağıtım-explicit-deployment) | **Yeni cihazlar için dağıtım gerektir** etkinleştirildiğinde yeni bir cihazı kaydeder. **Cihazlar** (Devices) izni **Okuma ve yazma** olarak ayarlanmış bir API belirteci gerektirir. | 1.8.3 | 1.4.7 |
 
 Windows'ta komut satırı varsayılan olarak çıktı vermez. Çıktı almak için lütfen `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | more` veya `"C:\Program Files\RustDesk\rustdesk.exe" <arg1> <arg2> ... | Out-String` şeklinde çalıştırın, bkz. [burası](https://github.com/rustdesk/rustdesk/discussions/6377#discussioncomment-8094952).
 

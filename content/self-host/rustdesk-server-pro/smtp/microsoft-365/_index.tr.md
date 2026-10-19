@@ -9,7 +9,7 @@ RustDesk Server Pro'yu OAuth2 ile Microsoft 365 Exchange Online üzerinden e-pos
 
 Bu kurulum; davet e-postaları, giriş doğrulama e-postaları ve bağlantı alarmı bildirimleri için uygundur.
 
-Genel SMTP kurulumu için [SMTP](../) sayfasına bakın.
+Genel SMTP kurulumu için [SMTP](/docs/tr/self-host/rustdesk-server-pro/smtp/) sayfasına bakın.
 
 ## Hangi Değerler RustDesk Pro'ya Girilir?
 
@@ -200,7 +200,7 @@ Bu noktada şunlara zaten sahip olmalısınız:
 
 RustDesk, Exchange hizmet sorumlusu `Identity` değerini sormaz; ancak e-postayı test etmeden önce yukarıdaki izin adımlarının tamamlanmış olması gerekir.
 
-1. RustDesk [web konsolunda](../../console/), **Ayarlar** -> **SMTP** bölümüne gidin.
+1. RustDesk [web konsolunda](/docs/tr/self-host/rustdesk-server-pro/console/), **Ayarlar** -> **SMTP** bölümüne gidin.
 1. OAuth2'yi etkinleştirin ve sağlayıcı olarak **Microsoft 365**'i seçin.
 1. Şu alanları doldurun:
 

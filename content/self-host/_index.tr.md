@@ -62,7 +62,7 @@ UDP `21116`
 
 `21115`-`21117` aralığındaki portlar RustDesk'in çalışması için gereken minimum portlardır. Bunlar sinyal, relay ve NAT geçişini yönetir.
 
-WSS yapılandırması için TCP `21118` ve TCP `21119` genellikle dışarıya açılmasına gerek olmayan portlardır çünkü bunlara Nginx gibi ters proxy tarafından dahili olarak erişilir. WebSocket kullanmıyorsanız bu portların açılmasına gerek yoktur. Lütfen bu [örnek Nginx yapılandırmasına](/docs/tr/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms) bakın.
+WSS yapılandırması için TCP `21118` ve TCP `21119` genellikle dışarıya açılmasına gerek olmayan portlardır çünkü bunlara Nginx gibi ters proxy tarafından dahili olarak erişilir. WebSocket kullanmıyorsanız bu portların açılmasına gerek yoktur. Lütfen bu [örnek Nginx yapılandırmasına](/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme) bakın.
 
 SSL proxy'si olmayan Pro kullanıcıları için API'nin çalışması adına TCP `21114` portunu açmanız gerekir. Sunucu için HTTPS (`443`) yapılandırılmışsa TCP `21114` portunun İnternet'e açılmasına gerek kalmaz.
 

@@ -162,4 +162,4 @@ Denetim günlüklerinin ne kadar süreyle tutulacağını belirlemek için **Aya
 
 Her günlük sayfasının araç çubuğunda **CSV olarak dışa aktar** seçeneği bulunur. Dışa aktarılan dosya, sayfadaki geçerli filtreleri takip eder ve web konsolunda gösterilen zaman değerlerini kullanır. Her dışa aktarma en fazla 1000 kayıt içerir, ancak tüm günlükleri gruplar halinde dışa aktarmak için **Başlangıç Zamanı** filtresini kullanabilirsiniz.
 
-Denetim günlüklerini sorgulamak için `audits.py` ile birlikte bir [API belirteci (token)](/docs/tr/self-host/rustdesk-server-pro/console/#audits-auditspy) de kullanabilirsiniz.
+Denetim günlüklerini sorgulamak için `audits.py` ile birlikte bir [API belirteci (token)](/docs/tr/self-host/rustdesk-server-pro/console/#denetimler-auditspy) de kullanabilirsiniz.

@@ -27,6 +27,6 @@ SMTP, RustDesk Server Pro dağıtımınızdan giden e-postalar için kullanılı
 - `Kimden` (From) adresine posta sağlayıcınız tarafından izin verilip verilmediği
 - TLS ve seçilen SMTP bağlantı noktasının posta sağlayıcınızın gereksinimleriyle eşleşip eşleşmediği
 
-Microsoft 365 OAuth2 kurulumu için [Microsoft 365](microsoft-365/) bölümüne bakın.
+Microsoft 365 OAuth2 kurulumu için [Microsoft 365](/docs/tr/self-host/rustdesk-server-pro/smtp/microsoft-365/) bölümüne bakın.
 
 [Video Eğitimi](https://youtu.be/0LyQY1JS4Uc)

@@ -20,7 +20,7 @@ RustDesk Server Pro'yu `systemd` ile bir Linux ana makinesinde dağıtmanın en 
 ## install.sh hızlı yanıtlar
 
 - `systemd` ile basit bir Linux dağıtımı için bu yöntemi kullanın.
-- Daha kolay yükseltmeler, geri alma ve konteyner tabanlı operasyonlar istiyorsanız bunun yerine [Docker](/docs/tr/self-host/rustdesk-server-pro/installscript/docker/#docker-compose) kullanın.
+- Daha kolay yükseltmeler, geri alma ve konteyner tabanlı operasyonlar istiyorsanız bunun yerine [Docker](/docs/tr/self-host/rustdesk-server-pro/installscript/docker/#docker-compose-önerilen) kullanın.
 - Başlamadan önce Pro lisansınızı hazır bulundurun.
 - Bir alan adı kullanıyorsanız betik HTTPS için `nginx` ve `certbot` kurulumunu da yapabilir.
 - İlk kurulumdan sonraki yükseltmeler için `update.sh` kullanın.
@@ -32,7 +32,7 @@ RustDesk Server Pro'yu kurmak için aşağıdaki komutu Linux terminalinize kopy
 `wget -qO- https://raw.githubusercontent.com/rustdesk/rustdesk-server-pro/main/install.sh | bash`
 
 {{% notice note %}}
-[Docker imajını](/docs/tr/self-host/rustdesk-server-pro/installscript/docker/#docker-compose) kullanmanızı öneririm; çözümü dağıtma ve güncelleme sürecini büyük ölçüde basitleştirir. Kaynak tüketimi çok düşüktür.
+[Docker imajını](/docs/tr/self-host/rustdesk-server-pro/installscript/docker/#docker-compose-önerilen) kullanmanızı öneririm; çözümü dağıtma ve güncelleme sürecini büyük ölçüde basitleştirir. Kaynak tüketimi çok düşüktür.
 
 Ayrıca lütfen yukarıdaki komutu yazma izniniz olmayan bir dizin yerine ana (home) dizininiz altında çalıştırın.
 {{% /notice %}}
@@ -56,7 +56,7 @@ systemd servisi başlatılamazsa büyük olasılıkla SELinux ile ilgilidir, lü
 {{% /notice %}}
 
 {{% notice note %}}
-İstemciniz sunucunuza bağlanamıyorsa veya web konsoluna erişemiyorsanız lütfen [burayı](/docs/tr/self-host/rustdesk-server-pro/faq/#güvenlik-duvarı-firewall) inceleyin.
+İstemciniz sunucunuza bağlanamıyorsa veya web konsoluna erişemiyorsanız lütfen [burayı](/docs/tr/self-host/rustdesk-server-pro/faq/#güvenlik-duvarı) inceleyin.
 {{% /notice %}}
 
 ## Yükseltme

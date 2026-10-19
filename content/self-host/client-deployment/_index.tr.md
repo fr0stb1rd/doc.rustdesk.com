@@ -357,7 +357,7 @@ Varsayılan olarak, bir RustDesk istemcisi sunucuya ilk kez bağlandığında ke
 
 Sunucu web konsolunda **Ayarlar → Diğerleri → Yeni cihazlar için dağıtım gerektir** seçeneğini etkinleştirirseniz, yeni cihazların bu sunucuya kaydedilebilmesi için önceden açıkça dağıtılması gerekir.
 
-Sunucu web konsolundan bir yönetici hesabıyla bir [API belirteci (token)](/docs/tr/self-host/rustdesk-server-pro/console/#api-token) oluşturun. Belirtecin **Cihazlar** (Devices) izninin **Okuma ve yazma** olarak ayarlanması gerekir. Ardından, RustDesk kurulup kendi sunucunuzu kullanacak şekilde yapılandırıldıktan sonra her yeni masaüstü cihazında dağıtım komutunu çalıştırın.
+Sunucu web konsolundan bir yönetici hesabıyla bir [API belirteci (token)](/docs/tr/self-host/rustdesk-server-pro/console/#api-belirteci-token) oluşturun. Belirtecin **Cihazlar** (Devices) izninin **Okuma ve yazma** olarak ayarlanması gerekir. Ardından, RustDesk kurulup kendi sunucunuzu kullanacak şekilde yapılandırıldıktan sonra her yeni masaüstü cihazında dağıtım komutunu çalıştırın.
 
 ### Windows, macOS ve Linux
 
