@@ -223,21 +223,21 @@ Windows'ta komut satırı varsayılan olarak çıktı vermez. Çıktı almak iç
 - **Disable email verification:**  
   `./users.py --url <url> --token <token> disable-email-verification --name username`
 
-- **Force logout:**  
+- **Oturumu kapatmaya zorla (Force logout):**  
   `./users.py --url <url> --token <token> force-logout --name username`
 
-**Notes:**
-- When operating on multiple users (matched by filters), you will be prompted for confirmation
-- If no users match the filter, it will display "Found 0 users"
+**Notlar:**
+- Birden fazla kullanıcı üzerinde işlem yaparken (filtrelerle eşleşen), sizden onay istenecektir
+- Filtreyle eşleşen kullanıcı yoksa "Found 0 users" (0 kullanıcı bulundu) görüntülenecektir
 
 ---
 
-#### User Groups Management (`user-groups.py`)
+#### Kullanıcı Grupları Yönetimi (`user-groups.py`)
 
 **Yardımı göster:**  
 `./user-groups.py -h`
 
-**View user groups:**  
+**Kullanıcı gruplarını görüntüleme:**  
 `./user-groups.py --url <url> --token <token> view [--name <group_name>]`
 
 **Example:**  
@@ -274,27 +274,27 @@ Windows'ta komut satırı varsayılan olarak çıktı vermez. Çıktı almak iç
 - **Add users to group:**  
   `./user-groups.py --url <url> --token <token> add-users --name "GroupName" --users "user1,user2,user3"`
 
-**Access control parameters:**
+**Erişim kontrol parametreleri:**
 
-- `--accessed-from`: JSON array defining who can access this user group
-  - Type 0 = User Group (e.g., `[{"type":0,"name":"Admins"}]`)
-  - Type 2 = User (e.g., `[{"type":2,"name":"john"}]`)
+- `--accessed-from`: Bu kullanıcı grubuna kimlerin erişebileceğini tanımlayan JSON dizisi
+  - Tür 0 = Kullanıcı Grubu (örn., `[{"type":0,"name":"Admins"}]`)
+  - Tür 2 = Kullanıcı (örn., `[{"type":2,"name":"john"}]`)
 
-- `--access-to`: JSON array defining what this user group can access
-  - Type 0 = User Group (e.g., `[{"type":0,"name":"Support"}]`)
-  - Type 1 = Device Group (e.g., `[{"type":1,"name":"Servers"}]`)
+- `--access-to`: Bu kullanıcı grubunun nelere erişebileceğini tanımlayan JSON dizisi
+  - Tür 0 = Kullanıcı Grubu (örn., `[{"type":0,"name":"Support"}]`)
+  - Tür 1 = Cihaz Grubu (örn., `[{"type":1,"name":"Servers"}]`)
 
-**Permission requirements:**
-- `view/add/update/delete/add-users` commands require **User Group Permission**
-- `view-users` command requires **User Permission**
+**İzin gereksinimleri:**
+- `view/add/update/delete/add-users` komutları **Kullanıcı Grubu İzni** gerektirir
+- `view-users` komutu **Kullanıcı İzni** gerektirir
 
 ---
 
-#### Admin Roles Management (`admin-roles.py`)
+#### Yönetici Rolleri Yönetimi (`admin-roles.py`)
 
-The token must belong to a full administrator and have **Admin Role** read or read/write permission. Commands that resolve user names or list role members also require **User** read permission.
+Belirteç (token) tam bir yöneticiye ait olmalı ve **Yönetici Rolü** okuma veya okuma/yazma iznine sahip olmalıdır. Kullanıcı adlarını çözümleyen veya rol üyelerini listeleyen komutlar ayrıca **Kullanıcı** okuma izni gerektirir.
 
-**View roles:**
+**Rolleri görüntüleme:**
 
 ```bash
 # List roles, optionally filtered by exact name or type
@@ -319,11 +319,11 @@ The token must belong to a full administrator and have **Admin Role** read or re
   --user-groups "Support" --device-groups "Servers" --unassigned
 ```
 
-The role type cannot be changed after creation. `--permissions` accepts comma-separated permission names, decimal IDs, or `0x`-prefixed IDs, and the formats can be mixed. For example, `users.view,513,0x0203` is equivalent to `257,513,515`. The server rejects permissions that are not valid for the selected role type.
+Rol türü oluşturulduktan sonra değiştirilemez. `--permissions`, virgülle ayrılmış izin adlarını, ondalık kimlikleri veya `0x` ön ekli kimlikleri kabul eder ve bu biçimler karıştırılabilir. Örneğin, `users.view,513,0x0203`, `257,513,515` ile eşdeğerdir. Sunucu, seçilen rol türü için geçerli olmayan izinleri reddeder.
 
-The `view` command converts known permission IDs back to the names below. An ID unknown to the script is preserved as a number so permissions added by a newer server are not hidden.
+`view` komutu bilinen izin kimliklerini aşağıdaki adlara dönüştürür. Betik tarafından bilinmeyen bir kimlik sayı olarak korunur, böylece daha yeni bir sunucu tarafından eklenen izinler gizlenmez.
 
-| Area | Permissions | Valid role types |
+| Alan | İzinler | Geçerli rol türleri |
 | --- | --- | --- |
 | Users | `users.view` (`257`); `users.create` (`259`); `users.invite` (`260`); `users.delete` (`261`); `users.enable_disable` (`262`); `users.edit_email` (`263`); `users.edit_password` (`264`); `users.edit_note` (`265`); `users.manage_2fa` (`266`); `users.force_logout` (`267`); `users.change_strategy` (`269`); `users.change_control_role` (`270`); `users.edit_display_name` (`271`) | global, group |
 | Users | `users.change_group` (`268`) | global |
@@ -337,7 +337,7 @@ The `view` command converts known permission IDs back to the names below. An ID 
 | Custom clients | `custom_clients.view` (`1793`); `custom_clients.edit` (`1794`) | global |
 | Control roles | `control_roles.view` (`2049`); `control_roles.edit` (`2050`) | global |
 
-**Update or delete a role:**
+**Rolü güncelleme veya silme:**
 
 ```bash
 ./admin-roles.py --url <url> --token <token> update --name "Support Admin" \
@@ -357,22 +357,22 @@ Pass an empty value to clear `--note`, `--permissions`, `--user-groups`, or `--d
 ./admin-roles.py --url <url> --token <token> remove-users --name "Support Admin" --users "user1,user2"
 ```
 
-Role targets and users can also be supplied by GUID. User names and GUIDs can be mixed in `--users`.
+Rol hedefleri ve kullanıcılar GUID ile de belirtilebilir. Kullanıcı adları ve GUID'ler `--users` içinde birlikte kullanılabilir.
 
 ---
 
-#### Control Roles Management (`control-roles.py`)
+#### Kontrol Rolleri Yönetimi (`control-roles.py`)
 
-The token needs **Control Role** read or read/write permission. Commands that resolve user names or list role members also require **User** read permission.
+Belirteç (token) **Kontrol Rolü** okuma veya okuma/yazma iznine ihtiyaç duyar. Kullanıcı adlarını çözümleyen veya rol üyelerini listeleyen komutlar ayrıca **Kullanıcı** okuma izni gerektirir.
 
-**View roles:**
+**Rolleri görüntüleme:**
 
 ```bash
 ./control-roles.py --url <url> --token <token> view [--name <role_name>] [--status enabled|disabled]
 ./control-roles.py --url <url> --token <token> view --guid <role_guid>
 ```
 
-**Create, update, delete, enable, or disable a role:**
+**Rol oluşturma, güncelleme, silme, etkinleştirme veya devre dışı bırakma:**
 
 ```bash
 ./control-roles.py --url <url> --token <token> add --name "Contractors" [--note "Restricted access"]
@@ -382,9 +382,9 @@ The token needs **Control Role** read or read/write permission. Commands that re
 ./control-roles.py --url <url> --token <token> disable --name "Contractors"
 ```
 
-New roles created by this script do not include control permissions. Configure them in the web console before assigning users. Control-permission definitions are not managed or displayed by this script.
+Bu betik tarafından oluşturulan yeni roller kontrol izinlerini içermez. Kullanıcıları atamadan önce bunları web konsolunda yapılandırın. Kontrol izni tanımları bu betik tarafından yönetilmez veya görüntülenmez.
 
-**Manage role members:**
+**Rol üyelerini yönetme:**
 
 ```bash
 ./control-roles.py --url <url> --token <token> view-users --name "Contractors"
@@ -447,103 +447,103 @@ Role targets and users can also be supplied by GUID. `remove-users` clears each 
   ./device-groups.py --url <url> --token <token> view-devices --name Production --user-name john
   ```
 
-- **Add devices to group:**  
+- **Gruba cihaz ekleme:**  
   `./device-groups.py --url <url> --token <token> add-devices --name "GroupName" --ids "deviceid1,deviceid2"`
 
-- **Remove devices from group:**  
+- **Gruptan cihaz çıkarma:**  
   `./device-groups.py --url <url> --token <token> remove-devices --name "GroupName" --ids "deviceid1,deviceid2"`
 
-**Access control parameter:**
+**Erişim kontrol parametresi:**
 
-- `--accessed-from`: JSON array defining who can access this device group
-  - Type 0 = User Group (e.g., `[{"type":0,"name":"Engineers"}]`)
-  - Type 2 = User (e.g., `[{"type":2,"name":"admin"}]`)
+- `--accessed-from`: Bu cihaz grubuna kimlerin erişebileceğini tanımlayan JSON dizisi
+  - Tür 0 = Kullanıcı Grubu (örn., `[{"type":0,"name":"Engineers"}]`)
+  - Tür 2 = Kullanıcı (örn., `[{"type":2,"name":"admin"}]`)
 
-**Permission requirements:**
-- `view/add/update/delete/add-devices/remove-devices` commands require **Device Group Permission**
-- `view-devices` command requires **Device Permission**
+**İzin gereksinimleri:**
+- `view/add/update/delete/add-devices/remove-devices` komutları **Cihaz Grubu İzni** gerektirir
+- `view-devices` komutu **Cihaz İzni** gerektirir
 
 ---
 
-#### Devices Management (`devices.py`)
+#### Cihazlar Yönetimi (`devices.py`)
 
 **Yardımı göster:**  
 `./devices.py -h`
 
-**View devices:**  
+**Cihazları görüntüleme:**  
 `./devices.py --url <url> --token <token> view [--id <device_id>] [--device_name <device_name>] [--user_name <user_name>] [--group_name <group_name>] [--device_group_name <device_group_name>] [--offline_days <days>]`
 
 **Filtreler:**  
-`--id`: device ID  
-`--device_name`: device name  
-`--user_name`: assigned user  
-`--group_name`: user group  
-`--device_group_name`: device group  
-`--offline_days`: days offline
+`--id`: cihaz kimliği (ID)  
+`--device_name`: cihaz adı  
+`--user_name`: atanan kullanıcı  
+`--group_name`: kullanıcı grubu  
+`--device_group_name`: cihaz grubu  
+`--offline_days`: çevrimdışı geçen gün sayısı
 
-**Example:**  
+**Örnek:**  
 `./devices.py --url https://example.com --token <token> view --user_name mike`
 
-**Operations:**  
-view can be replaced with `enable`, `disable`, `delete`, or `assign`.
+**İşlemler:**  
+`view` yerine `enable`, `disable`, `delete` veya `assign` kullanılabilir.
 
-**Example (assign device):**  
+**Örnek (cihaz atama):**  
 `./devices.py --url https://example.com --token <token> assign --device_name PC01 --assign_to user_name=mike`
 
 ---
 
-#### Address Book Management (`ab.py`)
+#### Adres Defteri Yönetimi (`ab.py`)
 
 **Yardımı göster:**  
 `./ab.py -h`
 
-**View shared address books:**  
+**Paylaşılan adres defterlerini görüntüleme:**  
 `./ab.py --url <url> --token <token> view-ab [--ab-name <address_book_name>]`
 
-**Get personal address book GUID:**  
+**Kişisel adres defteri GUID'sini alma:**  
 `./ab.py --url <url> --token <token> get-personal-ab`
 
-**Add a shared address book:**  
+**Paylaşılan adres defteri ekleme:**  
 `./ab.py --url <url> --token <token> add-ab --ab-name <name> [--note <note>] [--password <password>]`
 
-**Update or delete a shared address book:**  
+**Paylaşılan adres defterini güncelleme veya silme:**  
 `./ab.py --url <url> --token <token> update-ab --ab-guid <guid> [--ab-update-name <new_name>] [--note <note>]`  
 `./ab.py --url <url> --token <token> delete-ab --ab-guid <guid>`
 
-**View peers in an address book:**  
+**Adres defterindeki eşleri (peers) görüntüleme:**  
 `./ab.py --url <url> --token <token> view-peer --ab-guid <guid> [--peer-id <peer_id>] [--alias <alias>]`
 
-**Add, update, or delete a peer:**  
+**Eş ekleme, güncelleme veya silme:**  
 `./ab.py --url <url> --token <token> add-peer --ab-guid <guid> --peer-id <peer_id> [--alias <alias>] [--note <note>] [--tags tag1,tag2]`  
 `./ab.py --url <url> --token <token> update-peer --ab-guid <guid> --peer-id <peer_id> [--alias <alias>] [--note <note>] [--tags tag1,tag2]`  
 `./ab.py --url <url> --token <token> delete-peer --ab-guid <guid> --peer-id <peer_id>`
 
-**Tags management:**  
+**Etiket yönetimi:**  
 `./ab.py --url <url> --token <token> view-tag --ab-guid <guid>`  
 `./ab.py --url <url> --token <token> add-tag --ab-guid <guid> --tag-name <name> [--tag-color 0xFF00FF00]`  
 `./ab.py --url <url> --token <token> update-tag --ab-guid <guid> --tag-name <name> --tag-color 0xFFFF0000`  
 `./ab.py --url <url> --token <token> delete-tag --ab-guid <guid> --tag-name <name>`
 
-**Access rules management:**  
+**Erişim kuralları yönetimi:**  
 `./ab.py --url <url> --token <token> view-rule --ab-guid <guid>`  
 `./ab.py --url <url> --token <token> add-rule --ab-guid <guid> [--rule-type user|group|everyone] [--rule-user <user>] [--rule-group <group>] --rule-permission ro|rw|full`  
 `./ab.py --url <url> --token <token> update-rule --rule-guid <rule_guid> --rule-permission rw`  
 `./ab.py --url <url> --token <token> delete-rule --rule-guid <rule_guid>`
 
-**Example (add read-only rule for user "mike"):**  
+**Örnek ("mike" kullanıcısı için salt okunur kural ekleme):**  
 `./ab.py --url https://example.com --token <token> add-rule --ab-guid <guid> --rule-user mike --rule-permission ro`
 
 ---
 
-#### Strategies Management (`strategies.py`)
+#### Stratejiler Yönetimi (`strategies.py`)
 
 **Yardımı göster:**  
 `./strategies.py -h`
 
-**List all strategies:**  
+**Tüm stratejileri listeleme:**  
 `./strategies.py --url <url> --token <token> list`
 
-**View a specific strategy:**  
+**Belirli bir stratejiyi görüntüleme:**  
 ```bash
 # By name
 ./strategies.py --url <url> --token <token> view --name "Default"
@@ -552,24 +552,24 @@ view can be replaced with `enable`, `disable`, `delete`, or `assign`.
 ./strategies.py --url <url> --token <token> view --guid "01983006-fcca-7c12-9a91-b1df483c6073"
 ```
 
-**Enable or disable a strategy:**  
+**Stratejiyi etkinleştirme veya devre dışı bırakma:**  
 ```bash
 ./strategies.py --url <url> --token <token> enable --name "StrategyName"
 ./strategies.py --url <url> --token <token> disable --name "StrategyName"
 ```
 
-**Assign strategy to devices, users, or device groups:**  
+**Stratejiyi cihazlara, kullanıcılara veya cihaz gruplarına atama:**  
 ```bash
-# Assign to devices (by device ID)
+# Cihazlara atama (cihaz kimliğine göre)
 ./strategies.py --url <url> --token <token> assign --name "Default" --peers "1849118658,1337348840"
 
-# Assign to users (by username)
+# Kullanıcılara atama (kullanıcı adına göre)
 ./strategies.py --url <url> --token <token> assign --name "Default" --users "admin,user1"
 
-# Assign to device groups (by group name)
+# Cihaz gruplarına atama (grup adına göre)
 ./strategies.py --url <url> --token <token> assign --name "Default" --device-groups "device_group1,Production"
 
-# Mixed assignment
+# Karışık atama
 ./strategies.py --url <url> --token <token> assign \
   --name "Default" \
   --peers "1849118658" \
@@ -577,58 +577,58 @@ view can be replaced with `enable`, `disable`, `delete`, or `assign`.
   --device-groups "device_group1"
 ```
 
-**Unassign strategy:**  
+**Strateji atamasını kaldırma:**  
 ```bash
-# Unassign from devices
+# Cihazlardan atamayı kaldırma
 ./strategies.py --url <url> --token <token> unassign --peers "1849118658,1337348840"
 
-# Unassign from users
+# Kullanıcılardan atamayı kaldırma
 ./strategies.py --url <url> --token <token> unassign --users "admin"
 
-# Unassign from device groups
+# Cihaz gruplarından atamayı kaldırma
 ./strategies.py --url <url> --token <token> unassign --device-groups "device_group1"
 ```
 
-**Notes:**
-- The script supports both names and GUIDs for users and device groups
-- Device IDs are automatically converted to GUIDs
-- All assign/unassign operations can target multiple resources at once
+**Notlar:**
+- Betik, kullanıcılar ve cihaz grupları için hem adları hem de GUID'leri destekler
+- Cihaz kimlikleri (ID) otomatik olarak GUID'lere dönüştürülür
+- Tüm atama/atama kaldırma işlemleri aynı anda birden fazla kaynağı hedefleyebilir
 
-**Permission requirements:**
-- `list/view/enable/disable/assign/unassign` commands require **Strategy Permission**
-- `--peers` requires **Device Permission:r** (for ID to GUID lookup)
-- `--users` requires **User Permission:r** (for username to GUID lookup)
-- `--device-groups` requires **Device Group Permission:r** (for name to GUID lookup)
+**İzin gereksinimleri:**
+- `list/view/enable/disable/assign/unassign` komutları **Strateji İzni** gerektirir
+- `--peers`, **Cihaz İzni:r** gerektirir (ID'den GUID'e çözümleme için)
+- `--users`, **Kullanıcı İzni:r** gerektirir (kullanıcı adından GUID'e çözümleme için)
+- `--device-groups`, **Cihaz Grubu İzni:r** gerektirir (addan GUID'e çözümleme için)
 
 ---
 
-#### Audits (`audits.py`)
+#### Denetimler (`audits.py`)
 
 **Yardımı göster:**  
 `./audits.py -h`
 
-**View connection audits:**  
+**Bağlantı denetimlerini görüntüleme:**  
 `./audits.py --url <url> --token <token> view-conn [--remote <peer_id>] [--conn-type <type>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]`
 
-**View file audits:**  
+**Dosya denetimlerini görüntüleme:**  
 `./audits.py --url <url> --token <token> view-file [--remote <peer_id>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]`
 
-**View alarm audits:**  
+**Alarm denetimlerini görüntüleme:**  
 `./audits.py --url <url> --token <token> view-alarm [--device <device_id>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]`
 
-**View console audits:**  
+**Konsol denetimlerini görüntüleme:**  
 `./audits.py --url <url> --token <token> view-console [--operator <username>] [--page-size <n>] [--current <n>] [--created-at <"YYYY-MM-DD HH:MM:SS">] [--days-ago <n>]`
 
 **Filtreler:**  
-`--remote`: Peer ID (for connection or file audits)  
-`--conn-type`: 0=Remote Desktop, 1=File Transfer, 2=Port Transfer, 3=View Camera, 4=Terminal  
-`--device`: Device ID (for alarm audits)  
-`--operator`: Operator username (for console audits)  
-`--created-at`: Local time filter, e.g., "2025-09-16 14:15:57"  
-`--days-ago`: Filter records newer than given days ago  
-`--page-size` / `--current`: Pagination
+`--remote`: Eş Kimliği (bağlantı veya dosya denetimleri için)  
+`--conn-type`: 0=Uzak Masaüstü, 1=Dosya Aktarımı, 2=Port Yönlendirme, 3=Kamera Görüntüleme, 4=Terminal  
+`--device`: Cihaz Kimliği (alarm denetimleri için)  
+`--operator`: İşlemi yapan yönetici kullanıcı adı (konsol denetimleri için)  
+`--created-at`: Yerel zaman filtresi, örn., "2025-09-16 14:15:57"  
+`--days-ago`: Belirtilen gün sayısından daha yeni kayıtları filtreler  
+`--page-size` / `--current`: Sayfalandırma
 
-**Example:**  
+**Örnek:**  
 `./audits.py --url https://example.com --token <token> view-conn --remote 123456789 --days-ago 7`
 
 

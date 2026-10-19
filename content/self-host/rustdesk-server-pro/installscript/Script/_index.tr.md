@@ -87,7 +87,7 @@ Lütfen güvenlik duvarınıza `21114` TCP portunu ekleyin; bu port web konsolu 
 {{% /notice %}}
 
 {{% notice note %}}
-Bu betikle sorun yaşarsanız bir Docker kurulumuna geçmenizi öneririm. Alternatif olarak betiği inceleyip adımları manuel olarak tek tek uygulayabilirsiniz.
+Bu betikle sorun yaşarsanız Docker kurulumuna geçmeniz önerilir. Alternatif olarak betiği inceleyip adımları tek tek manuel olarak uygulayabilirsiniz.
 {{% /notice %}}
 
 Betiğin yaptıkları:

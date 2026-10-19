@@ -50,11 +50,11 @@ Lütfen aşağıda gösterildiği gibi `LDAP` ayarları sayfasına gidin:
 - **NoTLSVerify:** TLS sertifikası doğrulamasının atlanıp atlanmayacağını belirler. Ne yaptığınızdan emin olmadığınız sürece bunu `false` (yani sertifika doğrulamasını gerçekleştir) olarak bırakmanız önerilir.
 
 ## Nasıl çalışır?
-- LDAP girişleri nasıl çalışır (önce yeni bir kullanıcı oluşturmam gerekir mi, RustDesk ilk girişte kullanıcı oluşturur mu)?
+- LDAP girişleri nasıl çalışır (önce yeni bir kullanıcı oluşturulması gerekir mi, RustDesk ilk girişte kullanıcı oluşturur mu)?
   > RustDesk ilk oturum açmada kullanıcıyı otomatik oluşturur.
-- LDAP'ın çalışıp çalışmadığını nasıl kontrol ederim?
+- LDAP'ın çalışıp çalışmadığı nasıl kontrol edilir?
   > Yapılandırmayı kaydettiğinizde, verdiğiniz binddn/parola ile LDAP sunucunuza bağlanacak ve çalışıp çalışmadığını doğrulayacaktır.
-- Yerel kullanıcıları LDAP kullanıcılarına nasıl dönüştürürüm?
-  > Henüz desteklenmiyor.
-- LDAP gruplarını destekliyor mu?
-  > Henüz desteklenmiyor.
+- Yerel kullanıcılar LDAP kullanıcılarına nasıl dönüştürülür?
+  > Henüz desteklenmemektedir.
+- LDAP grupları destekleniyor mu?
+  > Henüz desteklenmemektedir.

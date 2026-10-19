@@ -200,9 +200,9 @@ Enable the control side to block other users' input.
 
 ### enable-privacy-mode
 
-Controls whether the controlled side allows the control side to use privacy mode.
+Kontrol edilen tarafın, kontrol eden tarafın gizlilik modunu kullanmasına izin verip vermeyeceğini belirler.
 
-This is different from [`privacy-mode`](#privacy-mode): that setting controls the default privacy mode behavior for each peer after the first connection, while `enable-privacy-mode` controls whether privacy mode is allowed.
+Bu ayar [`privacy-mode`](#privacy-mode) ayarından farklıdır: o ayar ilk bağlantıdan sonra her eş için varsayılan gizlilik modu davranışını denetlerken, `enable-privacy-mode` gizlilik moduna izin verilip verilmeyeceğini denetler.
 
 **Konum**:
 
@@ -214,7 +214,7 @@ This is different from [`privacy-mode`](#privacy-mode): that setting controls th
 
 ### allow-remote-config-modification
 
-Allow the control side to change the settings in controlled RustDesk UI.
+Kontrol eden tarafın, kontrol edilen RustDesk kullanıcı arayüzündeki ayarları değiştirmesine izin verir.
 
 **Konum**:
 
@@ -227,9 +227,9 @@ Allow the control side to change the settings in controlled RustDesk UI.
 
 ### enable-lan-discovery
 
-Allows LAN peers to discover me.
+Yerel ağdaki (LAN) eşlerin bu cihazı keşfetmesine izin verir.
 
-After LAN discovery, [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) can work if supported locally.
+LAN keşfinden sonra, yerel olarak destekleniyorsa [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) (Wake-on-LAN) çalışabilir.
 
 **Konum**:
 
@@ -279,15 +279,15 @@ Use IP Whitelisting.
 | :------: | :------: | :------: | :------: |
 | N | `,` or `<ip1>,<ip2>,<ip3>` | `,` means no filter | `whitelist=,` |
 
-CIDR notation is supported, e.g. `whitelist=192.168.1.0/24,10.0.0.5`.
+CIDR gösterimi desteklenir, örn. `whitelist=192.168.1.0/24,10.0.0.5`.
 
 ### id-whitelist
 
-Use ID whitelisting. Only the listed IDs can connect to this device.
+Kimlik (ID) beyaz listesini kullanır. Yalnızca listede bulunan kimlikler bu cihaza bağlanabilir.
 
-Wildcards are supported: `*` matches any number of characters, `?` matches exactly one character. Matching is case-insensitive.
+Joker karakterler desteklenir: `*` herhangi bir sayıda karakterle eşleşir, `?` tam olarak bir karakterle eşleşir. Eşleme büyük/küçük harfe duyarsızdır.
 
-**Note**: The ID is reported by the connecting client, so it is not an authentication mechanism. This whitelist reduces exposure, it does not replace the password or 2FA.
+**Not**: Kimlik (ID), bağlanan istemci tarafından bildirilir; bu nedenle tek başına bir kimlik doğrulama mekanizması değildir. Bu beyaz liste maruz kalma riskini azaltır, parola veya 2FA'nın yerini almaz.
 
 **Konum**:
 
@@ -340,7 +340,7 @@ Accept incoming connections via password or manually click.
 
 ### verification-method
 
-What type of password can be used, `temporary password` refers to the one-time random password.
+Hangi tür parolanın kullanılabileceğini belirler; `geçici parola` tek kullanımlık rastgele parolayı ifade eder.
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -420,7 +420,7 @@ Currently available languages are:
 
 ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, uk, vn, zh-cn, zh-tw
 
-You can check [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) in the code for the latest language list.
+En güncel dil listesi için koddaki [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) listesine bakabilirsiniz.
 
 ### allow-auto-record-incoming
 
@@ -450,7 +450,7 @@ Giden oturumları otomatik olarak kaydeder.
 
 ### hide-recording-button
 
-Hide the recording button in remote sessions on the controlling side. This does not disable recording. If automatic outgoing recording is enabled, sessions are still recorded, but users cannot stop the recording from the session toolbar.
+Kontrol eden tarafta uzak oturumlardaki kayıt düğmesini gizler. Bu, kayıt özelliğini devre dışı bırakmaz. Otomatik giden oturum kaydı etkinleştirilmişse oturumlar yine kaydedilir, ancak kullanıcılar oturum araç çubuğundan kaydı durduramaz.
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -458,27 +458,27 @@ Hide the recording button in remote sessions on the controlling side. This does 
 
 ### video-save-directory
 
-The directory to save recorded videos.
+Kaydedilen videoların kaydedileceği dizin.
 
-For controlled-side recordings made by the installed Windows service, use [`windows-service-video-save-directory`](#windows-service-video-save-directory).
+Yüklü Windows servisi tarafından yapılan kontrol edilen taraf kayıtları için [`windows-service-video-save-directory`](#windows-service-video-save-directory) seçeneğini kullanın.
 
 **Konum**:
 
 1. **Masaüstü** Ayarlar → Genel → Recording → Video save directory
 2. **Mobil** Settings → Recording
 
-Default values:
+Varsayılan değerler:
 
 1. **macOS** ~/Movies/**app_name**
 2. **Linux** ~/Videos/**app_name**
-3. **Windows** %USERPROFILE%\Videos\\**app_name**
+3. **Windows** %USERPROFILE%\Videos\**app_name**
 4. **Android** /Storage/emulated/0/**app_name**/ScreenRecord
 
-**Note**: Replace **app_name** means current app name.
+**Not**: **app_name** ifadesi geçerli uygulama adını belirtir.
 
 ### windows-service-video-save-directory
 
-The directory where an installed Windows client saves recordings when running as a service. The path must be absolute. An empty or relative path is ignored, and RustDesk uses the default directory instead.
+Yüklü bir Windows istemcisinin servis olarak çalışırken kayıtları kaydedeceği dizin. Yol mutlak olmalıdır. Boş veya göreli bir yol yoksayılır ve RustDesk bunun yerine varsayılan dizini kullanır.
 
 | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: |
@@ -486,9 +486,9 @@ The directory where an installed Windows client saves recordings when running as
 
 ### allow-auto-update
 
-Allow automatic updates. When enabled, the client will automatically download and install the latest version from GitHub official releases when a new version is available.
+Otomatik güncellemelere izin verir. Etkinleştirildiğinde istemci, yeni bir sürüm çıktığında GitHub resmi sürümlerinden en son sürümü otomatik olarak indirip yükler.
 
-This setting only applies on Windows when Connection type is set to Bidirectional or Incoming. It does not apply to Outgoing.
+Bu ayar yalnızca Windows üzerinde Bağlantı türü Çift Yönlü veya Gelen olarak ayarlandığında geçerlidir. Giden bağlantı türü için geçerli değildir.
 
 **Konum**:
 
@@ -500,7 +500,7 @@ This setting only applies on Windows when Connection type is set to Bidirectiona
 
 ### enable-confirm-closing-tabs
 
-Controls whether to show a confirm dialog before closing all remote tabs.
+Tüm uzak sekmeleri kapatmadan önce bir onay iletişim kutusu gösterilip gösterilmeyeceğini belirler.
 
 **Konum**:
 
@@ -539,7 +539,7 @@ Remove wallpaper during incoming sessions.
 
 ### enable-open-new-connections-in-tabs
 
-Controls whether to use a new tab or a new window to open a new connection.
+Yeni bir bağlantı açmak için yeni bir sekmenin mi yoksa yeni bir pencerenin mi kullanılacağını belirler.
 
 **Konum**:
 
@@ -608,7 +608,7 @@ Controls the ordering of peer cards.
 
 ### sync-ab-with-recent-sessions
 
-Controls whether to sync the address book with recent sessions.
+Adres defterinin son oturumlarla senkronize edilip edilmeyeceğini belirler.
 
 **Konum**:
 
@@ -621,7 +621,7 @@ Controls whether to sync the address book with recent sessions.
 
 ### sync-ab-tags
 
-Controls whether to sort the address book tags.
+Adres defteri etiketlerinin sıralanıp sıralanmayacağını belirler.
 
 **Konum**:
 
@@ -653,7 +653,7 @@ Filter address book by tag intersection.
 
 **Desktop** Settings → General → Other → Use texture render
 
-Use texture rendering to make the pictures smoother. You could try disabling this option if you encounter rendering issues. Only available on desktop.
+Görüntüleri daha pürüzsüz hale getirmek için doku oluşturma (texture rendering) kullanır. Görüntüleme sorunlarıyla karşılaşırsanız bu seçeneği devre dışı bırakmayı deneyebilirsiniz. Only available on desktop.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -661,7 +661,7 @@ Use texture rendering to make the pictures smoother. You could try disabling thi
 
 ### enable-tcp-punch
 
-Enable TCP hole punching. Enabled by default for both self-hosted and public servers.
+TCP delik açmayı (hole punching) etkinleştirir. Hem kendi barındırdığınız hem de genel sunucular için varsayılan olarak etkindir.
 
 **Konum**:
 
@@ -702,7 +702,7 @@ Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
 
 ### enable-webrtc
 
-Enable WebRTC P2P connections. As with UDP hole punching and IPv6 P2P connections, this is disabled by default for self-hosted servers. Set `enable-webrtc=Y` to enable it explicitly.
+WebRTC P2P bağlantılarını etkinleştirir. UDP delik açma ve IPv6 P2P bağlantılarında olduğu gibi, bu seçenek de kendi barındırdığınız sunucular için varsayılan olarak devre dışıdır. Açıkça etkinleştirmek için `enable-webrtc=Y` olarak ayarlayın.
 
 **Konum**:
 
@@ -717,9 +717,9 @@ Available since RustDesk 1.5.0, RustDesk Server Pro 1.8.7
 
 ### relay-fallback-delay
 
-How long an already-established relay connection waits for a direct WebRTC connection before the relay is used, in seconds. Increase this to give a slow direct connection more time; decrease it to use the relay sooner when a direct connection cannot be established.
+Önceden kurulmuş bir aktarım (relay) bağlantısının, doğrudan bir WebRTC bağlantısı kurulana kadar aktarımı kullanmadan önce saniye cinsinden ne kadar bekleyeceğini belirler. Yavaş bir doğrudan bağlantıya daha fazla süre tanımak için bu değeri artırın; doğrudan bir bağlantı kurulamadığında aktarımı daha erken kullanmak için bu değeri azaltın.
 
-Only applies when WebRTC is enabled (`enable-webrtc`). The desktop field is hidden when WebRTC is disabled. Leave it empty to use the default of 2.5 seconds. Invalid, zero, or negative values also use the default.
+Yalnızca WebRTC etkinleştirildiğinde (`enable-webrtc`) geçerlidir. Masaüstü alanı WebRTC devre dışıyken gizlenir. Varsayılan olan 2,5 saniyeyi kullanmak için boş bırakın. Geçersiz, sıfır veya negatif değerler de varsayılanı kullanır.
 
 **Konum**:
 
@@ -735,9 +735,9 @@ Available since RustDesk 1.5.0
 
 ### view-only
 
-This option will set the "view-only" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "view-only" seçeneğini belirler.
 
-Then the "view-only" option in each peer's settings will control whether the connection is view-only.
+Ardından her bir eşin ayarlarındaki "view-only" seçeneği, bağlantının yalnızca görüntüleme amaçlı olup olmayacağını denetler.
 
 **Konum**:
 
@@ -750,7 +750,7 @@ Then the "view-only" option in each peer's settings will control whether the con
 
 ### show-monitors-toolbar
 
-Controls whether to show monitors in toolbar.
+Araç çubuğunda monitörlerin gösterilip gösterilmeyeceğini belirler.
 
 ![show-monitors-toolbar](/docs/tr/self-host/client-configuration/advanced-settings/images/show-monitors-toolbar.png)
 
@@ -765,7 +765,7 @@ Controls whether to show monitors in toolbar.
 
 ### collapse-toolbar
 
-Controls whether the remote toolbar is collapsed after connecting.
+Bağlantı kurulduktan sonra uzak araç çubuğunun daraltılıp daraltılmayacağını belirler.
 
 **Konum**:
 
@@ -778,9 +778,9 @@ Controls whether the remote toolbar is collapsed after connecting.
 
 ### show-remote-cursor
 
-This option will set the "show-remote-cursor" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "show-remote-cursor" seçeneğini belirler.
 
-Then the "show-remote-cursor" option in each peer's settings will control whether the remote cursor is displayed in the remote control page.
+Ardından her bir eşin ayarlarındaki "show-remote-cursor" seçeneği, uzaktan kontrol sayfasında uzak imlecin görüntülenip görüntülenmeyeceğini denetler.
 
 **Konum**:
 
@@ -793,9 +793,9 @@ Then the "show-remote-cursor" option in each peer's settings will control whethe
 
 ### follow-remote-cursor
 
-This option will set the "follow-remote-cursor" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "follow-remote-cursor" seçeneğini belirler.
 
-Then the "follow-remote-cursor" option in each peer's settings will control whether to follow the remote cursor.
+Ardından her bir eşin ayarlarındaki "follow-remote-cursor" seçeneği, uzak imlecin takip edilip edilmeyeceğini denetler.
 
 **Preview**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
@@ -810,9 +810,9 @@ Then the "follow-remote-cursor" option in each peer's settings will control whet
 
 ### follow-remote-window
 
-This option will set the "follow-remote-window" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "follow-remote-window" seçeneğini belirler.
 
-Then the "follow-remote-window" option in each peer's settings will control whether to follow the remote window.
+Ardından her bir eşin ayarlarındaki "follow-remote-window" seçeneği, uzak pencerenin takip edilip edilmeyeceğini denetler.
 
 **Preview**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
 
@@ -827,9 +827,9 @@ Then the "follow-remote-window" option in each peer's settings will control whet
 
 ### zoom-cursor
 
-This option will set the "zoom-cursor" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "zoom-cursor" seçeneğini belirler.
 
-The "zoom-cursor" option in each peer's settings will then control whether the cursor is scaled based on the current image scale.
+Ardından her bir eşin ayarlarındaki "zoom-cursor" seçeneği, imlecin uzak çözünürlüğe göre ölçeklendirilip ölçeklendirilmeyeceğini denetler.
 
 **Konum**:
 
@@ -842,9 +842,9 @@ The "zoom-cursor" option in each peer's settings will then control whether the c
 
 ### show-quality-monitor
 
-This option will set the "show-quality-monitor" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "show-quality-monitor" seçeneğini belirler.
 
-The "show-quality-monitor" option in each peer's settings will then control whether to show the quality monitor.
+Ardından her bir eşin ayarlarındaki "show-quality-monitor" seçeneği, kalite izleyicisinin gösterilip gösterilmeyeceğini denetler.
 
 **Konum**:
 
@@ -857,9 +857,9 @@ The "show-quality-monitor" option in each peer's settings will then control whet
 
 ### disable-audio
 
-This option will set the "disable-audio" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "disable-audio" seçeneğini belirler.
 
-The "disable-audio" option in each peer's settings will then control whether to play sound.
+Ardından her bir eşin ayarlarındaki "disable-audio" seçeneği, sesin çalınıp çalınmayacağını denetler.
 
 **Konum**:
 
@@ -872,9 +872,9 @@ The "disable-audio" option in each peer's settings will then control whether to 
 
 ### enable-file-copy-paste
 
-This option will set the "enable-file-copy-paste" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "enable-file-copy-paste" seçeneğini belirler.
 
-The "enable-file-copy-paste" option in each peer's settings will then control enable file copy and paste in connection.
+Ardından her bir eşin ayarlarındaki "enable-file-copy-paste" seçeneği, dosya kopyalama ve yapıştırmanın etkinleştirilip etkinleştirilmeyeceğini denetler.
 
 **Konum**:
 
@@ -887,9 +887,9 @@ The "enable-file-copy-paste" option in each peer's settings will then control en
 
 ### disable-clipboard
 
-This option will set the "disable-clipboard" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "disable-clipboard" seçeneğini belirler.
 
-The "disable-clipboard" option in each peer's settings will then control whether to enable text copy and paste.
+Ardından her bir eşin ayarlarındaki "disable-clipboard" seçeneği, metin kopyalama ve yapıştırmanın etkinleştirilip etkinleştirilmeyeceğini denetler.
 
 **Konum**:
 
@@ -902,9 +902,9 @@ The "disable-clipboard" option in each peer's settings will then control whether
 
 ### lock-after-session-end
 
-This option will set the "lock-after-session-end" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "lock-after-session-end" seçeneğini belirler.
 
-The "lock-after-session-end" option in each peer's settings will then control whether to lock the peer machine after the session ends.
+Ardından her bir eşin ayarlarındaki "lock-after-session-end" seçeneği, oturum sona erdikten sonra eşin kilitlenip kilitlenmeyeceğini denetler.
 
 **Konum**:
 
@@ -917,9 +917,9 @@ The "lock-after-session-end" option in each peer's settings will then control wh
 
 ### privacy-mode
 
-This option will set the "privacy-mode" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "privacy-mode" seçeneğini belirler.
 
-The "privacy-mode" option in each peer's settings will then control whether to use privacy mode after connecting.
+Ardından her bir eşin ayarlarındaki "privacy-mode" seçeneği, ilk bağlantıdan sonra gizlilik modunun kullanılıp kullanılmayacağını denetler.
 
 **Konum**:
 
@@ -932,9 +932,9 @@ The "privacy-mode" option in each peer's settings will then control whether to u
 
 ### i444
 
-This option will set the "i444" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "i444" seçeneğini belirler.
 
-The "i444" option in each peer's settings will then control whether to use true color.
+Ardından her bir eşin ayarlarındaki "i444" seçeneği, gerçek rengin (true color) kullanılıp kullanılmayacağını denetler.
 
 **Konum**:
 
@@ -947,9 +947,9 @@ The "i444" option in each peer's settings will then control whether to use true 
 
 ### reverse-mouse-wheel
 
-This option will set the "reverse-mouse-wheel" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "reverse-mouse-wheel" seçeneğini belirler.
 
-The "reverse-mouse-wheel" option in each peer's settings will then control whether to reverse mouse wheel.
+Ardından her bir eşin ayarlarındaki "reverse-mouse-wheel" seçeneği, fare tekerleğinin yönünün tersine çevrilip çevrilmeyeceğini denetler.
 
 **Konum**:
 
@@ -962,9 +962,9 @@ The "reverse-mouse-wheel" option in each peer's settings will then control wheth
 
 ### swap-left-right-mouse
 
-This option will set the "swap-left-right-mouse" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "swap-left-right-mouse" seçeneğini belirler.
 
-The "swap-left-right-mouse" option in each peer's settings will then control whether to swap left-right mouse button.
+Ardından her bir eşin ayarlarındaki "swap-left-right-mouse" seçeneği, sol-sağ fare düğmelerinin yerinin değiştirilip değiştirilmeyeceğini denetler.
 
 **Konum**:
 
@@ -977,9 +977,9 @@ The "swap-left-right-mouse" option in each peer's settings will then control whe
 
 ### displays-as-individual-windows
 
-This option will set the "displays-as-individual-windows" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "displays-as-individual-windows" seçeneğini belirler.
 
-The "displays-as-individual-windows" option in each peer's settings will then control whether to show displays as individual windows.
+Ardından her bir eşin ayarlarındaki "displays-as-individual-windows" seçeneği, her bir ekranın ayrı bir pencere olarak gösterilip gösterilmeyeceğini denetler.
 
 **Preview**: [PR 5945](https://github.com/rustdesk/rustdesk/pull/5945)
 
@@ -994,9 +994,9 @@ The "displays-as-individual-windows" option in each peer's settings will then co
 
 ### use-all-my-displays-for-the-remote-session
 
-This option will set the "use-all-my-displays-for-the-remote-session" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "use-all-my-displays-for-the-remote-session" seçeneğini belirler.
 
-The "use-all-my-displays-for-the-remote_session" option in each peer's settings will then control whether to use all my displays for the remote session.
+Ardından her bir eşin ayarlarındaki "use-all-my-displays-for-the-remote_session" seçeneği, tüm ekranların uzak oturum için kullanılıp kullanılmayacağını denetler.
 
 **Preview**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
 
@@ -1011,9 +1011,9 @@ The "use-all-my-displays-for-the-remote_session" option in each peer's settings 
 
 ### view-style
 
-This option will set the "view-style" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "view-style" seçeneğini belirler.
 
-The "view-style" option in each peer's settings will then control the view style.
+Ardından her bir eşin ayarlarındaki "view-style" seçeneği görüntüleme stilini denetler.
 
 **Konum**:
 
@@ -1026,9 +1026,9 @@ The "view-style" option in each peer's settings will then control the view style
 
 ### scroll-style
 
-This option will set the "scroll-style" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "scroll-style" seçeneğini belirler.
 
-The "scroll-style" option in each peer's settings will then control the scroll style.
+Ardından her bir eşin ayarlarındaki "scroll-style" seçeneği kaydırma stilini denetler.
 
 **Konum**:
 
@@ -1039,13 +1039,13 @@ The "scroll-style" option in each peer's settings will then control the scroll s
 | :------: | :------: | :------: | :------: |
 | N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
 
-**Note**: The `scrolledge` option is available starting from RustDesk 1.4.4.
+**Not**: `scrolledge` seçeneği RustDesk 1.4.4 sürümünden itibaren kullanılabilir.
 
 ### edge-scroll-edge-thickness
 
-This option controls the edge thickness when `scroll-style` is set to `scrolledge`. The edge thickness determines the size of the scrollable area at the screen edges.
+Bu seçenek, `scroll-style` seçeneği `scrolledge` olarak ayarlandığında kenar kalınlığını denetler. Kenar kalınlığı, ekran kenarlarındaki kaydırılabilir alanın boyutunu belirler.
 
-This option is only effective when `scroll-style=scrolledge`.
+Bu seçenek yalnızca `scroll-style=scrolledge` olduğunda geçerlidir.
 
 **Konum**:
 
@@ -1055,13 +1055,13 @@ This option is only effective when `scroll-style=scrolledge`.
 | :------: | :------: | :------: | :------: |
 | N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
 
-**Note**: This option is available starting from RustDesk 1.4.4.
+**Not**: Bu seçenek RustDesk 1.4.4 sürümünden itibaren kullanılabilir.
 
 ### image-quality
 
-This option will set the "image-quality" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "image-quality" seçeneğini belirler.
 
-The "image-quality" option in each peer's settings will then control the image quality.
+Ardından her bir eşin ayarlarındaki "image-quality" seçeneği görüntü kalitesini denetler.
 
 **Konum**:
 
@@ -1074,9 +1074,9 @@ The "image-quality" option in each peer's settings will then control the image q
 
 ### custom-image-quality
 
-This option will set the "custom-image-quality" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "custom-image-quality" seçeneğini belirler.
 
-The "custom-image-quality" option in each peer's settings will then control the image quality if "image-quality" is set to custom.
+Ardından her bir eşin ayarlarındaki "custom-image-quality" seçeneği, "image-quality" özel (custom) olarak ayarlanmışsa görüntü kalitesini denetler.
 
 **Konum**:
 
@@ -1089,9 +1089,9 @@ The "custom-image-quality" option in each peer's settings will then control the 
 
 ### custom-fps
 
-This option will set the "custom-fps" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "custom-fps" seçeneğini belirler.
 
-The "custom-fps" option in each peer's settings will then control the fps if "image-quality" is set to custom.
+Ardından her bir eşin ayarlarındaki "custom-fps" seçeneği, "image-quality" özel olarak ayarlanmışsa FPS değerini denetler.
 
 **Konum**:
 
@@ -1104,9 +1104,9 @@ The "custom-fps" option in each peer's settings will then control the fps if "im
 
 ### codec-preference
 
-This option will set the "codec-preference" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "codec-preference" seçeneğini belirler.
 
-The "codec-preference" option in each peer's settings will then control codec for images.
+Ardından her bir eşin ayarlarındaki "codec-preference" seçeneği görüntüler için kodeği denetler.
 
 **Konum**:
 
@@ -1117,13 +1117,13 @@ The "codec-preference" option in each peer's settings will then control codec fo
 | :------: | :------: | :------: | :------: |
 | N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
 
-**Caution**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
+**Dikkat**: "vp8" ve "vp9" dışındaki seçenekler çalışmayabilir. Bu, makinenizin neyi desteklediğine bağlıdır.
 
 ### terminal-persistent
 
-This option will set the "terminal-persistent" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "terminal-persistent" seçeneğini belirler.
 
-The "terminal-persistent" option in each peer's settings will then control whether to keep terminal sessions on disconnect.
+Ardından her bir eşin ayarlarındaki "terminal-persistent" seçeneği, terminal pencerelerinin oturumlar arasında korunup korunmayacağını denetler.
 
 **Konum**:
 
@@ -1136,9 +1136,9 @@ The "terminal-persistent" option in each peer's settings will then control wheth
 
 ### trackpad-speed
 
-This option will set the "trackpad-speed" option for every peer after the first connection.
+Bu seçenek, ilk bağlantıdan sonra her bir eş için "trackpad-speed" seçeneğini belirler.
 
-The "trackpad-speed" option in each peer's settings will then control the fps if "trackpad-speed" is set to custom.
+Ardından her bir eşin ayarlarındaki "trackpad-speed" seçeneği, dokunmatik yüzey hızını denetler.
 
 **Konum**:
 
@@ -1153,9 +1153,9 @@ The "trackpad-speed" option in each peer's settings will then control the fps if
 
 ### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
 
-Preset address book name, device tag, device alias, device password, device note, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
-You can set preset-address-book-name only if you do not want to set tag.
-Please use valid address book name and tag on your address book page of web console.
+Önceden tanımlanmış adres defteri adı, cihaz etiketi, cihaz takma adı, cihaz parolası, cihaz notu, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+Etiket belirlemek istemiyorsanız yalnızca preset-address-book-name ayarlayabilirsiniz.
+Lütfen web konsolunuzun adres defteri sayfasındaki geçerli bir adres defteri adını ve etiketini kullanın.
 
 | Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
@@ -1165,11 +1165,11 @@ Please use valid address book name and tag on your address book page of web cons
 | preset-address-book-password | N | | | `preset-address-book-password=<device password>` |
 | preset-address-book-note | N | | | `preset-address-book-note=<device note>` |
 
-preset-address-book-alias, preset-address-book-password, preset-address-book-note are available in RustDesk client >=1.4.3, pro >= 1.6.6.
+preset-address-book-alias, preset-address-book-password, preset-address-book-note seçenekleri RustDesk istemcisi >=1.4.3, pro >= 1.6.6 sürümlerinde kullanılabilir.
 
 ### disable-group-panel
 
-Disable group panel (next to address book panel, it is named to "Accessible devices" since 1.3.8) on RustDesk client, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
+RustDesk istemcisinde grup panelini (adres defteri panelinin yanındaki, 1.3.8 sürümünden itibaren "Erişilebilir cihazlar" olarak adlandırılan panel) devre dışı bırakır, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
 
 | Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
@@ -1177,7 +1177,7 @@ Disable group panel (next to address book panel, it is named to "Accessible devi
 
 ### pre-elevate-service
 
-Automatic elevation on run for Windows portable, https://github.com/rustdesk/rustdesk-server-pro/issues/252.
+Taşınabilir Windows istemcisi çalıştırıldığında otomatik yetki yükseltme, https://github.com/rustdesk/rustdesk-server-pro/issues/252.
 
 | Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
 | :------: | :------: | :------: | :------: | :------: |
@@ -1185,7 +1185,7 @@ Automatic elevation on run for Windows portable, https://github.com/rustdesk/rus
 
 ### disable-floating-window
 
-When the Android service starts, it will display a floating window, which helps prevent the system from killing the RustDesk service.
+Android servisi başladığında, sistemin RustDesk servisini sonlandırmasını önlemeye yardımcı olan bir kayan pencere (floating window) görüntüler.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1193,7 +1193,7 @@ When the Android service starts, it will display a floating window, which helps 
 
 ### floating-window-size
 
-When the Android service starts, it will display a floating window, which helps prevent the system from killing the RustDesk service. When the size is less than 120, the floating window will be difficult to be clicked. A very small size may not be able to keep the background service on some devices.
+Android servisi başladığında, sistemin RustDesk servisini sonlandırmasını önlemeye yardımcı olan bir kayan pencere (floating window) görüntüler. Boyut 120'den küçük olduğunda kayan pencereye tıklamak zorlaşacaktır. Çok küçük bir boyut bazı cihazlarda arka plan servisini ayakta tutamayabilir.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1201,7 +1201,7 @@ When the Android service starts, it will display a floating window, which helps 
 
 ### floating-window-untouchable
 
-By default, clicking on the floating window will pop up a menu. After setting it to 'untouchable', clicking or swiping will pass through the floating window and be transmitted to the underlying window. After being set to 'untouchable', the position of the floating window cannot be changed, and the system may automatically set the floating window to be semi-transparent. However, this feature may not work in a small number of applications, such as the GitHub app.
+Varsayılan olarak, kayan pencereye tıklandığında bir menü açılır. 'untouchable' (dokunulmaz) olarak ayarlandıktan sonra, tıklama veya kaydırma işlemleri kayan pencerenin içinden geçerek alttaki pencereye iletilir. 'untouchable' olarak ayarlandıktan sonra kayan pencerenin konumu değiştirilemez ve sistem kayan pencereyi otomatik olarak yarı saydam hale getirebilir. Ancak bu özellik GitHub uygulaması gibi az sayıda uygulamada çalışmayabilir.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1209,7 +1209,7 @@ By default, clicking on the floating window will pop up a menu. After setting it
 
 ### floating-window-transparency
 
-Android floating windows have adjustable transparency. If you want to enable but hide the floating window, you can set the transparency to 0, the floating window will be automatically set to 'untouchable' in order to pass through click events.
+Android kayan pencereleri ayarlanabilir saydamlığa sahiptir. Kayan pencereyi etkinleştirmek ancak gizlemek istiyorsanız saydamlığı 0 olarak ayarlayabilirsiniz; kayan pencere, tıklama olaylarını alta iletmek için otomatik olarak 'untouchable' durumuna getirilecektir.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1217,8 +1217,8 @@ Android floating windows have adjustable transparency. If you want to enable but
 
 ### floating-window-svg
 
-If an icon is not set for the Android floating window, it will default to displaying the RustDesk icon.
-When setting, please write the text content of SVG into one line, and pay attention to the [SVG support limitations](https://bigbadaboom.github.io/androidsvg/index.html).
+Android kayan penceresi için bir simge ayarlanmazsa varsayılan olarak RustDesk simgesi görüntülenir.
+Ayar yaparken lütfen SVG'nin metin içeriğini tek bir satıra yazın ve [SVG destek sınırlamalarına](https://bigbadaboom.github.io/androidsvg/index.html) dikkat edin.
 
 | Default | Example |
 | :------: | :------: |
@@ -1226,7 +1226,7 @@ When setting, please write the text content of SVG into one line, and pay attent
 
 ### keep-screen-on
 
-Bu, Android kontrol edilen taraf içindir. Note that keeping the screen on depends on the floating window.
+Bu, Android kontrol edilen taraf içindir. Ekranın açık tutulmasının kayan pencereye bağlı olduğunu unutmayın.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1250,7 +1250,7 @@ Giden uzak masaüstü oturumları sırasında ekranı uyanık tutar. Uygulama uz
 
 ### enable-directx-capture
 
-Bu, Windows kontrol edilen taraf içindir. If you don't encounter any problems, it is recommended to use the default settings, which prioritize using DirectX for screenshots instead of using GDI directly.
+Bu, Windows kontrol edilen taraf içindir. Herhangi bir sorunla karşılaşmıyorsanız, doğrudan GDI kullanmak yerine ekran görüntüleri için DirectX kullanımına öncelik veren varsayılan ayarları kullanmanız önerilir.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1258,7 +1258,7 @@ Bu, Windows kontrol edilen taraf içindir. If you don't encounter any problems, 
 
 ### enable-android-software-encoding-half-scale
 
-Bu, Android kontrol edilen taraf içindir. By default, when the resolution is greater than 1200, hardware encoding uses the original resolution, while software encoding uses half the resolution, as software encoding is slower. This option is used to set whether software encoding should be scaled to half the resolution.
+Bu, Android kontrol edilen taraf içindir. Varsayılan olarak çözünürlük 1200'den büyük olduğunda, donanım kodlaması orijinal çözünürlüğü kullanırken yazılım kodlaması daha yavaş olduğundan yarı çözünürlüğü kullanır. Bu seçenek, yazılım kodlamasının yarı çözünürlüğe ölçeklendirilip ölçeklendirilmeyeceğini belirlemek için kullanılır.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1266,7 +1266,7 @@ Bu, Android kontrol edilen taraf içindir. By default, when the resolution is gr
 
 ### allow-remote-cm-modification
 
-Controls whether to allow the control side to click on the accept window (connection management window) to accept connections, change permissions, etc.
+Kontrol eden tarafın bağlantıları kabul etmek, izinleri değiştirmek vb. için kabul penceresine (bağlantı yönetim penceresi) tıklamasına izin verilip verilmeyeceğini belirler.
 
 https://github.com/rustdesk/rustdesk/issues/7425
 
@@ -1276,9 +1276,9 @@ https://github.com/rustdesk/rustdesk/issues/7425
 
 ### enable-perm-change-in-accept-window
 
-Controls whether users can change permissions in the accept window (connection management window) before accepting an incoming session.
+Kullanıcıların gelen bir oturumu kabul etmeden önce kabul penceresinde (bağlantı yönetim penceresi) izinleri değiştirip değiştiremeyeceğini belirler.
 
-On desktop, this affects all permissions in the accept window (connection management window). On Android, it affects the following permissions: Transfer file, Audio capture, and Enable clipboard. Screen capture and Input control are not affected.
+Masaüstünde bu ayar kabul penceresindeki (bağlantı yönetim penceresi) tüm izinleri etkiler. Android'de ise şu izinleri etkiler: Dosya aktarımı, Ses yakalama ve Panoyu etkinleştir. Ekran yakalama ve Giriş denetimi etkilenmez.
 
 **Preview**: https://github.com/rustdesk/rustdesk/pull/14875
 
@@ -1288,7 +1288,7 @@ On desktop, this affects all permissions in the accept window (connection manage
 
 ### remove-preset-password-warning
 
-Controls whether to remove the security warning on GUI when there is preset password in custom client. 
+Özel istemcide önceden ayarlanmış parola olduğunda grafik arayüzündeki güvenlik uyarısının kaldırılıp kaldırılmayacağını belirler. 
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/286
 
@@ -1300,7 +1300,7 @@ https://github.com/rustdesk/rustdesk/discussions/7956
 
 ### hide-general-settings
 
-Controls whether to hide the `General` tab of the settings page. Unlike the other `hide-*-settings` options, this one also works when `Disable settings` is enabled, because `Disable settings` does not hide the `General` tab.
+Ayarlar sayfasının `Genel` sekmesinin gizlenip gizlenmeyeceğini belirler. Diğer `hide-*-settings` seçeneklerinden farklı olarak bu seçenek `Disable settings` etkinleştirildiğinde de çalışır, çünkü `Disable settings` `Genel` sekmesini gizlemez.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/1001
 
@@ -1312,7 +1312,7 @@ Available since RustDesk 1.5.0
 
 ### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
 
-Controls whether to hide some settings. Please ensure `Disable settings` is turned off, otherwise these won't work.
+Bazı ayarların gizlenip gizlenmeyeceğini belirler. Lütfen `Disable settings` seçeneğinin kapalı olduğundan emin olun, aksi takdirde bunlar çalışmaz.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/263
 
@@ -1324,7 +1324,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/276
 
 ### hide-username-on-card
 
-Controls whether to show username in the list of devices. Because sometimes, the username is too long, will hide the other info.
+Cihazlar listesinde kullanıcı adının gösterilip gösterilmeyeceğini belirler. Çünkü bazen kullanıcı adı çok uzun olduğunda diğer bilgileri gizleyebilir.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
 
@@ -1334,7 +1334,7 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-22165214
 
 ### hide-help-cards
 
-Controls whether to show UAC / permission warnings on GUI.
+Grafik arayüzde UAC / izin uyarılarının gösterilip gösterilmeyeceğini belirler.
 
 https://github.com/rustdesk/rustdesk/issues/8687
 
@@ -1344,7 +1344,7 @@ https://github.com/rustdesk/rustdesk/issues/8687
 
 ### display-name
 
-Change your display name which will be shown on the popup when you connect to remote device. By default it displays login user's name first, otherwise it displays your OS username.
+Uzak cihaza bağlandığınızda açılır pencerede gösterilecek görünen adınızı değiştirin. Varsayılan olarak önce giriş yapan kullanıcının adını, yoksa işletim sistemi kullanıcı adınızı görüntüler.
 
 https://github.com/rustdesk/rustdesk-server-pro/issues/277
 
@@ -1358,7 +1358,7 @@ Yalnızca TCP kullanılıp kullanılmayacağını denetler. Artık UDP 21116 kul
 
 ### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
 
-Assign user / strategy / device group / device username / device-name(hostname) / note to device. You can also do this via [command line](/docs/tr/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
+Cihaza kullanıcı / strateji / cihaz grubu / cihaz kullanıcı adı / cihaz adı (ana bilgisayar adı) / not atayın. Bunu [komut satırı](/docs/tr/self-host/rustdesk-server-pro/console/#cihazları-görüntüleme) üzerinden de yapabilirsiniz.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/304
 
@@ -1368,7 +1368,7 @@ preset-device-username, preset-device-name, preset-note are available in RustDes
 
 ### default-connect-password
 
-You use the `default connection password` to establish connections to remote devices. This password is configured on the controlling side and should not be confused with any [preset password](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access) found on the controlled (incoming-only) client.
+Uzak cihazlara bağlantı kurmak için `varsayılan bağlantı parolası`nı kullanırsınız. Bu parola kontrol eden tarafta yapılandırılır ve kontrol edilen (yalnızca gelen) istemcide bulunan herhangi bir [önceden ayarlanmış parola](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access) ile karıştırılmamalıdır.
 
 e.g. `default-connect-password=abcd1234`
 
@@ -1394,9 +1394,9 @@ https://github.com/rustdesk/rustdesk-server-pro/issues/332
 
 ### hide-stop-service
 
-Hide stop/toggle service controls while the service is running. This is mainly for custom clients to prevent users from stopping the service from the UI (desktop settings, tray menu, Android server page, and Android floating window menu).
+Servis çalışırken servisi durdurma/açma-kapama kontrollerini gizler. Bu özellik temel olarak özel istemcilerde kullanıcıların servisi kullanıcı arayüzünden (masaüstü ayarları, sistem tepsisi menüsü, Android sunucu sayfası ve Android kayan pencere menüsü) durdurmasını önlemek içindir.
 
-When the service is stopped, the start/enable entry remains visible.
+Servis durdurulduğunda başlatma/etkinleştirme girdisi görünür kalmaya devam eder.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1425,7 +1425,7 @@ https://github.com/rustdesk/rustdesk/discussions/7837
 
 ### sync-init-clipboard
 
-If sync initial clipboard when establishing connection (only from controlling side to controlled side), available in RustDesk client >=1.3.1 (controlling side)
+Bağlantı kurulurken başlangıç panosunun senkronize edilip edilmeyeceğini belirler (yalnızca kontrol eden taraftan kontrol edilen tarafa), RustDesk istemcisi >=1.3.1 sürümünde kullanılabilir (kontrol eden taraf).
 
 https://github.com/rustdesk/rustdesk/discussions/9010
 
@@ -1435,9 +1435,9 @@ https://github.com/rustdesk/rustdesk/discussions/9010
 
 ### allow-logon-screen-password
 
-If allow password input on logon screen when [click-only approve mode](/docs/tr/self-host/client-configuration/advanced-settings/#approve-mode) is used, available in RustDesk client >=1.3.1 (controlled side)
+Oturum açma ekranında [yalnızca tıklama onay modu](/docs/tr/self-host/client-configuration/advanced-settings/#approve-mode) kullanıldığında parola girişine izin verilip verilmeyeceğini belirler, RustDesk istemcisi >=1.3.1 sürümünde kullanılabilir (kontrol edilen taraf).
 
-When enabled, permanent password is also allowed when the current session is in a logon or lock-screen state. This applies to Click, Password, and Both approve modes. RustDesk client >=1.4.7 (controlled side)
+Etkinleştirildiğinde, geçerli oturum bir oturum açma veya kilit ekranı durumundayken kalıcı parolaya da izin verilir. Bu durum Tıklama, Parola ve Her İkisi onay modları için geçerlidir. RustDesk istemcisi >=1.4.7 (kontrol edilen taraf).
 
 https://github.com/rustdesk/rustdesk/discussions/9269
 
@@ -1447,7 +1447,7 @@ https://github.com/rustdesk/rustdesk/discussions/9269
 
 ### allow-https-21114
 
-Typically, HTTPS uses port 443. When the API server's port is mistakenly set to 21114, RustDesk client will remove the 21114 port setting by default. Setting the option to Y allows the use of 21114 as the HTTPS port. Available in RustDesk client >=1.3.9.
+Genellikle HTTPS 443 bağlantı noktasını kullanır. API sunucusunun bağlantı noktası yanlışlıkla 21114 olarak ayarlandığında, RustDesk istemcisi varsayılan olarak 21114 bağlantı noktası ayarını kaldırır. Bu seçeneği Y olarak ayarlamak, 21114'ün HTTPS bağlantı noktası olarak kullanılmasına izin verir. RustDesk istemcisi >=1.3.9 sürümünde kullanılabilir.
 
 https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
@@ -1457,7 +1457,7 @@ https://github.com/rustdesk/rustdesk-server-pro/discussions/570
 
 ### allow-d3d-render
 
-D3D render can get high FPS and reduce the cpu usage, but the remote control screen may be black on some devices. Available in RustDesk client >=1.3.9, windows only.
+D3D oluşturma yüksek FPS sağlayabilir ve CPU kullanımını azaltabilir; ancak bazı cihazlarda uzaktan kontrol ekranı siyah kalabilir. RustDesk istemcisi >=1.3.9 sürümünde yalnızca Windows için kullanılabilir.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1465,7 +1465,7 @@ D3D render can get high FPS and reduce the cpu usage, but the remote control scr
 
 ### allow-hostname-as-id
 
-[Use hostname as id](https://github.com/rustdesk/rustdesk-server-pro/discussions/483), spaces in the hostname are replaced with '-'. This is not 100% guaranteed and only occurs the first time the RustDesk client is run (i.e., on a newly installed client); if a conflict occurs, a random ID will be assigned. 
+[Ana bilgisayar adını kimlik (ID) olarak kullan](https://github.com/rustdesk/rustdesk-server-pro/discussions/483), ana bilgisayar adındaki boşluklar '-' ile değiştirilir. Bu %100 garanti edilmez ve yalnızca RustDesk istemcisi ilk kez çalıştırıldığında (yani yeni yüklenen bir istemcide) gerçekleşir; bir çakışma oluşursa rastgele bir kimlik atanır. 
 
 Available in RustDesk client version 1.4.0 and later. 
 
@@ -1475,9 +1475,9 @@ Available in RustDesk client version 1.4.0 and later.
 
 ### allow-websocket
 
-Use WebSocket protocol to connect server and client. Only available in RustDesk client >=1.4.0 and Pro server >= 1.5.7. Note that WebSocket only supports relay connection.
+Sunucu ve istemciyi bağlamak için WebSocket protokolünü kullanır. Yalnızca RustDesk istemcisi >=1.4.0 ve Pro sunucusu >= 1.5.7 sürümünde kullanılabilir. WebSocket'in yalnızca relay bağlantısını desteklediğini unutmayın.
 
-To make WebSocket work, you need to configure your reverse proxy correctly, /docs/tr/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+WebSocket'in çalışması için ters proxy'nizi doğru yapılandırmanız gerekir, [/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme](/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme)
 
 **Konum**:
 
@@ -1503,11 +1503,11 @@ Only available in RustDesk client >=1.4.1 and Pro server >= 1.5.9.
 
 ### register-device
 
-Do not register the device, you will not see it in the devices page on web console. 
+Cihazı kaydetmez, web konsolundaki cihazlar sayfasında göremezsiniz. 
 
 **Only available in Pro server >= 1.6.0 and requires [custom2 license](https://rustdesk.com/pricing#custom2) and number of concurrent connections >= 2.**
 
-If `register-device=N`, below will not work for this device.
+`register-device=N` ise, aşağıdakiler bu cihaz için çalışmayacaktır.
 - Log in
 - `--assign` command
 - `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
@@ -1552,7 +1552,7 @@ Controls whether to use touch mode or mouse mode during remote control sessions.
 
 ##### RustDesk (Controlling Side) < 1.4.3
 
-After the first connection, this option sets the "touch-mode" setting for each peer. Thereafter, the individual settings of each peer determine whether to use touch mode or mouse mode.
+İlk bağlantıdan sonra bu seçenek her eş için "touch-mode" (dokunmatik mod) ayarını belirler. Bundan sonra, her eşin bireysel ayarları dokunmatik modun mu yoksa fare modunun mu kullanılacağını belirler.
 
 **Konum**:
 
@@ -1561,7 +1561,7 @@ After the first connection, this option sets the "touch-mode" setting for each p
 
 ##### RustDesk (Controlling Side) >= 1.4.3
 
-This option uniformly controls whether all peer devices use touch mode or mouse mode, overriding individual device settings.
+Bu seçenek, bireysel cihaz ayarlarını geçersiz kılarak tüm eş cihazların dokunmatik mod mu yoksa fare modu mu kullanacağını tek tip olarak denetler.
 
 | Values | Default | Example |
 | :------: | :------: | :------: |
@@ -1571,7 +1571,7 @@ This option uniformly controls whether all peer devices use touch mode or mouse 
 
 https://github.com/rustdesk/rustdesk/pull/12911
 
-Controls the display of the virtual mouse when mobile -> desktop.
+Mobil cihazdan masaüstüne bağlanırken sanal farenin gösterilmesini denetler.
 
 **Konum**:
 
@@ -1584,15 +1584,15 @@ Available since RustDesk 1.4.3
 | :------: | :------: | :------: |
 | Y, N | N | `show-virtual-mouse=Y` |
 
-**Note**: This option should be configured in **Default settings** rather than **Override settings**.
+**Not**: Bu seçenek **Geçersiz kılma ayarları** yerine **Varsayılan ayarlar** içinde yapılandırılmalıdır.
 
 ### show-virtual-joystick
 
 https://github.com/rustdesk/rustdesk/pull/12911
 
-Controls the display of the virtual joystick when mobile -> desktop.
+Mobil cihazdan masaüstüne bağlanırken sanal oyun kolunun (joystick) gösterilmesini denetler.
 
-This option requires the **show-virtual-mouse** to be enabled.
+Bu seçenek **show-virtual-mouse** seçeneğinin etkinleştirilmesini gerektirir.
 
 **Konum**:
 
@@ -1605,13 +1605,13 @@ Available since RustDesk 1.4.3
 | :------: | :------: | :------: |
 | Y, N | N | `show-virtual-joystick=Y` |
 
-**Note**: This option should be configured in **Default settings** rather than **Override settings**.
+**Not**: Bu seçenek **Geçersiz kılma ayarları** yerine **Varsayılan ayarlar** içinde yapılandırılmalıdır.
 
 ### allow-insecure-tls-fallback
 
-By default, RustDesk verifies the server certificate for protocols using TLS.
+Varsayılan olarak RustDesk, TLS kullanan protokoller için sunucu sertifikasını doğrular.
 
-With this option enabled, RustDesk will fall back to skipping the verification step and proceed in case of verification failure.
+Bu seçenek etkinleştirildiğinde RustDesk, doğrulama hatası durumunda doğrulama adımını atlamaya geri döner ve işleme devam eder.
 
 **Konum**:
 
@@ -1628,7 +1628,7 @@ Available since RustDesk 1.4.4
 
 Bağlantı sona erdiğinde kontrol eden taraftan bir not girmesini ister.
 
-If you enable this option from the client UI and are not logged in yet, RustDesk asks you to log in first.
+Bu seçeneği istemci kullanıcı arayüzünden etkinleştirirseniz ve henüz oturum açmadıysanız, RustDesk önce oturum açmanızı ister.
 
 **Konum**:
 
@@ -1675,7 +1675,7 @@ Available since RustDesk 1.4.5
 
 ### allow-command-line-settings-when-settings-disabled
 
-Allow configuration via command-line settings when `Disable settings` is enabled in custom client. When set to Y, only the UI settings are disabled, but command-line settings can still be used to configure the client.
+Özel istemcide `Disable settings` etkinleştirildiğinde komut satırı ayarları aracılığıyla yapılandırmaya izin verir. Y olarak ayarlandığında yalnızca kullanıcı arayüzü ayarları devre dışı bırakılır; ancak istemciyi yapılandırmak için komut satırı ayarları halen kullanılabilir.
 
 Available since RustDesk 1.4.7
 

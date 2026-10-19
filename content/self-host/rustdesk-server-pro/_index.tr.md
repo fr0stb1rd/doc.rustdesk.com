@@ -53,13 +53,13 @@ Devam etmeden önce [Kendi sunucumuz nasıl çalışır?](/docs/tr/self-host/#ke
 En düşük seviye VPS bile kullanım senaryolarınız için yeterlidir. Sunucu yazılımı CPU ve bellek yoğun değildir. 2 CPU/4 GB Vultr sunucusunda barındırılan genel ID sunucumuz 1 milyondan fazla uç noktaya hizmet vermektedir. Her relay bağlantısı saniyede ortalama 180 kb tüketir. 1 CPU çekirdeği ve 1 GB RAM, eşzamanlı 1000 relay bağlantısını desteklemek için yeterlidir. Büyük ölçekli boyutlandırma için [50.000–200.000 cihaza ölçekleme](https://rustdesk.com/blog/rustdesk-scale-50000-200000-devices) makalesine bakın.
 
 ## Makale eğitimleri
-[Step-by-Step Guide: Self-Host RustDesk Server Pro on Cloud via Docker for Secure Remote Access](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
+[Adım Adım Kılavuz: Güvenli Uzaktan Erişim İçin Docker ile Bulutta RustDesk Server Pro Barındırma](https://www.linkedin.com/pulse/step-by-step-guide-self-host-rustdesk-server-pro-cloud-montinaro-fwnmf/)
 
 ## Video eğitimleri
 
-[Beginner's Guide: Self-Host RustDesk Server Pro for Novice Linux User](https://www.youtube.com/watch?v=MclmfYR3frk)
+[Başlangıç Kılavuzu: Yeni Başlayan Linux Kullanıcıları İçin RustDesk Server Pro Barındırma](https://www.youtube.com/watch?v=MclmfYR3frk)
 
-[Quick Guide: Self-Host RustDesk Server Pro for Adavanced Linux User](https://youtu.be/gMKFEziajmo)
+[Hızlı Kılavuz: İleri Düzey Linux Kullanıcıları İçin RustDesk Server Pro Barındırma](https://youtu.be/gMKFEziajmo)
 
 ## Lisans
 
@@ -90,7 +90,7 @@ Bu portlar hakkında daha fazla bilgi için lütfen [buraya](/docs/tr/self-host/
 
 > Deneme süresince HTTPS kullanmak istemiyorsanız bu adımı atlayabilirsiniz; ancak HTTPS'i kurduktan sonra istemcinin API adresini değiştirmeyi unutmayın.
 
-İşte [manuel HTTPS kurulumu](https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/faq/#set-up-https-for-web-console-manually) için basit bir eğitim.
+İşte [manuel HTTPS kurulumu](/docs/tr/self-host/rustdesk-server-pro/faq/#web-konsolu-için-manuel-olarak-https-kurma) için basit bir eğitim.
 
 ### 5, İstemciyi kendi sunucunuzu kullanacak şekilde yapılandırma
 
@@ -100,11 +100,11 @@ Bu portlar hakkında daha fazla bilgi için lütfen [buraya](/docs/tr/self-host/
 
 Web istemcisinin veya [masaüstü / mobil istemcinin](/docs/tr/self-host/client-configuration/advanced-settings/#allow-websocket) WebSocket ile düzgün çalışmasını sağlamak için ters proxy yapılandırmanıza gerekli ayarları eklemeniz gerekir:
 
-[/docs/tr/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms](/docs/tr/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms)
+[/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme](/docs/tr/self-host/rustdesk-server-pro/faq/#8-tüm-platformlar-için-güvenli-iletişimi-etkinleştirmek-üzere-kimlik-id-ve-relay-sunucusuna-güvenli-websocket-wss-desteği-ekleme)
 
 ## Sunucuyu Yükseltme
 
-Farklı kurulum yöntemlerine göre RustDesk Server Pro'yu alt sürümlerden yükseltmek için [bu kılavuza](/docs/tr/self-host/rustdesk-server-pro/faq/#there-is-a-new-version-of-rustdesk-server-pro-out-how-can-i-upgrade) bakın.
+Farklı kurulum yöntemlerine göre RustDesk Server Pro'yu alt sürümlerden yükseltmek için [bu kılavuza](/docs/tr/self-host/rustdesk-server-pro/faq/#rustdesk-server-pronun-yeni-bir-sürümü-çıktı-nasıl-yükseltebilirim) bakın.
 
 ## Yeni ana makineye geçiş ve yedekleme / geri yükleme
 
