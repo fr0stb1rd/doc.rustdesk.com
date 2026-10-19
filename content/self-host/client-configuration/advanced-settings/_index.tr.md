@@ -1,0 +1,1684 @@
+---
+title: Gelişmiş Ayarlar
+weight: 49
+description: "Geçersiz kılma, varsayılan, kullanıcı ve sabit ayarlar genelinde yetki düzeyleri ve seçenek davranışları dahil RustDesk özel istemcilerindeki gelişmiş ayarlar referansı."
+keywords: ["rustdesk gelişmiş ayarlar", "rustdesk özel istemci ayarları", "rustdesk yetki düzeyleri", "rustdesk geçersiz kılma ayarları", "rustdesk varsayılan ayarlar"]
+---
+
+RustDesk'teki gelişmiş özel istemci ayarlarını ve her ayarın farklı yetki düzeylerinde nasıl davrandığını anlamak için bu referansı kullanın.
+
+Özel istemcilerdeki tüm gelişmiş ayarlar burada ele alınmaktadır.
+
+## RustDesk özel istemcilerinde gelişmiş ayarlar nelerdir?
+
+Gelişmiş ayarlar; RustDesk özel istemcileri, kullanıcı ayarları ve sunucu tarafı ilkeleri aracılığıyla denetleyebileceğiniz düşük düzeyli istemci seçenekleridir. Birçok istemcide tutarlı davranışa ihtiyaç duyduğunuzda veya güvenlik, izinler ve kullanıcı arayüzü varsayılanları üzerinde daha sıkı denetim istediğinizde kullanışlıdır.
+
+## Ayar öncelikleri nasıl çalışır?
+
+| Kaynak | Öncelik |
+| --- | --- |
+| Geçersiz Kılma (Override) | En Yüksek |
+| Strateji (Strategy) | Yüksek |
+| Kullanıcı (User) | Orta |
+| Varsayılan (Default) | En Düşük |
+
+## Gelişmiş ayarlar hızlı yanıtlar
+
+- Geçersiz kılma (Override) ayarları diğer tüm kaynaklara göre önceliklidir
+- Strateji (Strategy) ayarları kullanıcı ve varsayılan ayarları geçersiz kılabilir
+- Kullanıcı (User) ayarları yalnızca daha yüksek öncelikli bir kaynak bunları geçersiz kılmadığında uygulanır
+- Varsayılan (Default) ayarlar yedek geri dönüş katmanıdır
+- Bu sayfa ayar anahtarları, değerleri, varsayılanları ve örnekleri için kesin referanstır
+
+## Ayarlar için Yetki Düzeyleri
+
+Dört tür ayar vardır:
+
+1. Geçersiz kılma ayarları: `Web Konsolu` → `Özel İstemciler`
+2. Varsayılan ayarlar: `Web Konsolu` → `Özel İstemciler`
+3. Kullanıcı ayarları: RustDesk istemcisi içinde
+4. Strateji ayarları: `Web Konsolu` → `Stratejiler`
+
+Bu ayarlar için yetki hiyerarşisi şu şekildedir: `Geçersiz Kılma (Override) > Strateji > Kullanıcı > Varsayılan`.
+
+## Güvenlik Ayarları
+
+### access-mode
+
+Gelen bağlantılar için erişim modunu (izinleri) belirler.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | custom, full, view | custom | `access-mode=custom` |
+
+### enable-keyboard
+
+Gelen bağlantılar için klavye/fare girişini etkinleştirir.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable keyboard
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-keyboard=Y` |
+
+### enable-clipboard
+
+Gelen bağlantılar için kopyala ve yapıştırı etkinleştirir.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable clipboard
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-clipboard=Y` |
+
+### enable-file-transfer
+
+Gelen bağlantılar için dosya kopyala/yapıştırı veya dosya aktarımı (oturumunu) etkinleştirir.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable file transfer
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-file-transfer=Y` |
+
+
+### enable-camera
+
+Gelen bağlantılar için kamerayı etkinleştirir.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable camera
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-camera=Y` |
+
+### enable-terminal
+
+Gelen bağlantılar için terminali etkinleştirir.
+
+**Konum**:
+
+**Desktop** Settings → Security → Permissions → Enable terminal
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-terminal=Y` |
+
+### enable-remote-printer
+
+Gelen bağlantılar için uzak yazıcıyı etkinleştirir.
+
+**Konum**:
+
+1. **Windows** Settings → Security → Permissions → Enable remote printer
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-remote-printer=Y` |
+
+### enable-audio
+
+Ses kaydını ve eşe aktarılmasını etkinleştirir.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable audio
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-audio=Y` |
+
+### enable-tunnel
+
+TCP tünellemeyi etkinleştirir.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable TCP tunneling
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-tunnel=Y` |
+
+### enable-remote-restart
+
+Kontrol eden tarafça yeniden başlatılabilmeyi etkinleştirir.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable remote restart
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-remote-restart=Y` |
+
+### enable-record-session
+
+Enable sessions to be recorded.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable recording session
+2. **Mobil** Settings → Share screen → Enable recording session
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-record-session=Y` |
+
+### enable-block-input
+
+Enable the control side to block other users' input.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable blocking user input (Windows only)
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-block-input=Y` |
+
+### enable-privacy-mode
+
+Controls whether the controlled side allows the control side to use privacy mode.
+
+This is different from [`privacy-mode`](#privacy-mode): that setting controls the default privacy mode behavior for each peer after the first connection, while `enable-privacy-mode` controls whether privacy mode is allowed.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable privacy mode
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-privacy-mode=Y` |
+
+### allow-remote-config-modification
+
+Allow the control side to change the settings in controlled RustDesk UI.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → İzinler → Enable remote configuration modification
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-remote-config-modification=Y` |
+
+### enable-lan-discovery
+
+Allows LAN peers to discover me.
+
+After LAN discovery, [WOL](https://en.wikipedia.org/wiki/Wake-on-LAN) can work if supported locally.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Deny LAN discovery
+2. **Mobil** Settings → Share screen → Deny LAN discovery
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| Y | Y, N | Y | `enable-lan-discovery=Y` |
+
+### direct-server
+
+Enable direct IP access.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Enable direct IP access
+2. **Mobil** Settings → Share screen → Direct IP access
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `direct-server=Y` |
+
+### direct-access-port
+
+Doğrudan IP erişim portu.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Direct IP access port (Show if "Enable direct IP access" is checked)
+2. **Mobil** Settings → Share screen → Direct IP access
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N |  | 21118 | `direct-access-port=21118` |
+
+### whitelist
+
+Use IP Whitelisting.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Use IP Whitelisting
+2. **Mobil** Settings → Share screen → Use IP Whitelisting
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | `,` or `<ip1>,<ip2>,<ip3>` | `,` means no filter | `whitelist=,` |
+
+CIDR notation is supported, e.g. `whitelist=192.168.1.0/24,10.0.0.5`.
+
+### id-whitelist
+
+Use ID whitelisting. Only the listed IDs can connect to this device.
+
+Wildcards are supported: `*` matches any number of characters, `?` matches exactly one character. Matching is case-insensitive.
+
+**Note**: The ID is reported by the connecting client, so it is not an authentication mechanism. This whitelist reduces exposure, it does not replace the password or 2FA.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Use ID whitelisting
+2. **Mobil** Settings → Share screen → Use ID whitelisting
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| N | `,` or `<id1>,<id2>,<id3>` | `,` means no filter | `id-whitelist=123456789,98765432?,abc*` | >= 1.5.0 |
+
+### allow-auto-disconnect & auto-disconnect-timeout
+
+Automatically close incoming sessions after a period of user inactivity.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Automatically close incoming sessions on user inactivity
+2. **Mobil** Settings → Share screen → Automatically close incoming sessions on user inactivity
+
+| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: | :------: |
+| allow-auto-disconnect | N | Y, N | N | `allow-auto-disconnect=Y` |
+| auto-disconnect-timeout | N | Timeout in minutes | 10 | `auto-disconnect-timeout=10` |
+
+### allow-only-conn-window-open
+
+Only allow connection if RustDesk window is open.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → Güvenlik → Only allow connection if RustDesk window is open
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| Y | Y, N | N | `allow-only-conn-window-open=N` |
+
+### approve-mode
+
+Accept incoming connections via password or manually click.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Güvenlik → Parola → Dropdown box
+2. **Mobil** Share screen → Dropdown menu on right-up corner
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | password, click, password-click | password-click | `approve-mode=password-click` |
+
+### verification-method
+
+What type of password can be used, `temporary password` refers to the one-time random password.
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | use-temporary-password, use-permanent-password, use-both-passwords | use-both-passwords | `verification-method=use-permanent-password` |
+
+### temporary-password-length
+
+1. **Masaüstü** Ayarlar → Güvenlik → Parola → One-time password length
+2. **Mobil** Share screen → Dropdown menu on right-up corner → One-time password length
+
+The length of the temporary password.
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | 6, 8, 10 | `temporary-password-length=6` |
+
+### proxy-url
+
+The proxy URL.
+
+Currently support `http` and `socks5`.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ağ → Proxy → Socks5/Http(s) proxy
+2. **Mobil**
+
+Examples:
+
+1. **http** `proxy-url=http://192.168.0.2:12345`
+2. **https** `proxy-url=https://192.168.0.2:12345`
+3. **socks5** `proxy-url=socks5://192.168.0.2:1080`
+
+### proxy-username & proxy-password
+
+Proxy username and password.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ağ → Proxy → Socks5/Http(s) proxy
+2. **Mobil**
+
+| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: | :------: |
+| proxy-username | N | | | `proxy-username=user` |
+| proxy-password | N | | | `proxy-password=pass` |
+
+## Genel Ayarlar
+
+### theme
+
+Controls the UI theme of RustDesk client.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Theme
+2. **Mobil** Settings → Settings → Theme
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | dark, light, system | system | `theme=system` |
+
+### lang
+
+Controls the language of RustDesk client.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Language
+2. **Mobil** Settings → Settings → Language
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | default, ar, bg, ... | default | `lang=default` |
+
+Currently available languages are:
+
+ar, bg, ca, cs, da, de, el, en, eo, es, et, fa, fr, he, hr, hu, id, it, ja, ko, kz, lt, lv, nb, nl, pl, pt, ro, ru, sk, sl, sq, sr, sv, th, tr, uk, vn, zh-cn, zh-tw
+
+You can check [LANGS](https://github.com/rustdesk/rustdesk/blob/master/src/lang.rs#L45) in the code for the latest language list.
+
+### allow-auto-record-incoming
+
+Gelen oturumları otomatik olarak kaydeder.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Recording → Automatically record incoming sessions
+2. **Mobil** Settings → Recording → Automatically record incoming sessions
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-auto-record-incoming=Y` |
+
+### allow-auto-record-outgoing
+
+Giden oturumları otomatik olarak kaydeder.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Recording → Automatically record outgoing sessions
+2. **Mobil** Settings → Recording → Automatically record outgoing sessions
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-auto-record-outgoing=Y` | >= 1.3.2 |
+
+### hide-recording-button
+
+Hide the recording button in remote sessions on the controlling side. This does not disable recording. If automatic outgoing recording is enabled, sessions are still recorded, but users cannot stop the recording from the session toolbar.
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `hide-recording-button=Y` |
+
+### video-save-directory
+
+The directory to save recorded videos.
+
+For controlled-side recordings made by the installed Windows service, use [`windows-service-video-save-directory`](#windows-service-video-save-directory).
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Recording → Video save directory
+2. **Mobil** Settings → Recording
+
+Default values:
+
+1. **macOS** ~/Movies/**app_name**
+2. **Linux** ~/Videos/**app_name**
+3. **Windows** %USERPROFILE%\Videos\\**app_name**
+4. **Android** /Storage/emulated/0/**app_name**/ScreenRecord
+
+**Note**: Replace **app_name** means current app name.
+
+### windows-service-video-save-directory
+
+The directory where an installed Windows client saves recordings when running as a service. The path must be absolute. An empty or relative path is ignored, and RustDesk uses the default directory instead.
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| Y | Absolute Windows path | `<system drive>\ProgramData\<app_name>\recording` | `windows-service-video-save-directory=D:\RustDesk\recordings` |
+
+### allow-auto-update
+
+Allow automatic updates. When enabled, the client will automatically download and install the latest version from GitHub official releases when a new version is available.
+
+This setting only applies on Windows when Connection type is set to Bidirectional or Incoming. It does not apply to Outgoing.
+
+**Konum**:
+
+1. **Windows** Settings → General → Other → Auto update
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek | Version |
+| :------: | :------: | :------: | :------: | :------: |
+| Y | Y, N | N | `allow-auto-update=Y` | >= 1.4.6 |
+
+### enable-confirm-closing-tabs
+
+Controls whether to show a confirm dialog before closing all remote tabs.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Other → Confirm before closing multiple tabs
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-confirm-closing-tabs=Y` |
+
+### enable-abr
+
+Enable adaptive bitrate.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Other → Adaptive bitrate
+2. **Mobil** Settings → Share screen → Adaptive bitrate (beta)
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-abr=Y` |
+
+### allow-remove-wallpaper
+
+Remove wallpaper during incoming sessions.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Other → Remove wallpaper during incoming sessions
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-remove-wallpaper=N` |
+
+### enable-open-new-connections-in-tabs
+
+Controls whether to use a new tab or a new window to open a new connection.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Other → Open connection in new tab
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-open-new-connections-in-tabs=Y` |
+
+### allow-always-software-render
+
+Always use software rendering.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Other → Always use software rendering
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `allow-always-software-render=N` |
+
+### enable-hwcodec
+
+Enable hardware encoding to make the picture smoother.
+
+**Konum**:
+
+1. **Desktop**
+2. **Mobil** Settings → Hardware codec
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | Y | `enable-hwcodec=Y` |
+
+### peer-card-ui-type
+
+Controls the view of peer cards, includes "Big tiles", "Small tiles" and "List".
+
+**Konum**:
+
+1. **Desktop** Home → Peer panel → Right top grid icon
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | 0, 1, 2 | 0 | `peer-card-ui-type=0` |
+
+**0** Big tiles  
+**1** Small tiles  
+**2** List
+
+### peer-sorting
+
+Controls the ordering of peer cards.
+
+**Konum**:
+
+1. **Desktop** Home → Peer panel → Right top sort icon
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Remote ID, Remote Host, Username | Remote ID | `peer-sorting=Remote ID` |
+
+### sync-ab-with-recent-sessions
+
+Controls whether to sync the address book with recent sessions.
+
+**Konum**:
+
+1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
+2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Sync with recent sessions
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `sync-ab-with-recent-sessions=N` |
+
+### sync-ab-tags
+
+Controls whether to sort the address book tags.
+
+**Konum**:
+
+1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
+2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Sort tags
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `sync-ab-tags=N` |
+
+### filter-ab-by-intersection
+
+Filter address book by tag intersection.
+
+**Preview**: [PR #5985](https://github.com/rustdesk/rustdesk/pull/5985)
+
+**Konum**:
+
+1. **Desktop** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
+2. **Mobil** Home → Peer panel → Address book → Tags → Dropdown menu → Filter by intersection
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `filter-ab-by-intersection=N` |
+
+### use-texture-render
+
+**Konum**:
+
+**Desktop** Settings → General → Other → Use texture render
+
+Use texture rendering to make the pictures smoother. You could try disabling this option if you encounter rendering issues. Only available on desktop.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | linux:Y, macOS:N, win7:N, win10+:Y | `use-texture-render=Y` |
+
+### enable-tcp-punch
+
+Enable TCP hole punching. Enabled by default for both self-hosted and public servers.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Other → Enable TCP hole punching
+2. **Mobil** Settings → Enable TCP hole punching
+
+Available since RustDesk 1.5.0
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-tcp-punch=N` |
+
+### enable-udp-punch
+
+**Konum**:
+
+**Desktop** Settings → General → Other → Enable UDP hole punching
+**Mobile** Settings → Enable UDP hole punching
+
+Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, otherwise:Y | `enable-udp-punch=N` |
+
+### enable-ipv6-punch
+
+**Konum**:
+
+**Desktop** Settings → General → Other → Enable IPv6 P2P connection
+**Mobile** Settings → General → Other → Enable IPv6 P2P connection
+
+Available since RustDesk 1.4.1, RustDesk Server Pro 1.6.2
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, otherwise:Y | `enable-ipv6-punch=N` |
+
+### enable-webrtc
+
+Enable WebRTC P2P connections. As with UDP hole punching and IPv6 P2P connections, this is disabled by default for self-hosted servers. Set `enable-webrtc=Y` to enable it explicitly.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Genel → Other → Enable WebRTC P2P connection
+2. **Mobil** Settings → Enable WebRTC P2P connection
+
+Available since RustDesk 1.5.0, RustDesk Server Pro 1.8.7
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | selfhost:N, otherwise:Y | `enable-webrtc=Y` |
+
+### relay-fallback-delay
+
+How long an already-established relay connection waits for a direct WebRTC connection before the relay is used, in seconds. Increase this to give a slow direct connection more time; decrease it to use the relay sooner when a direct connection cannot be established.
+
+Only applies when WebRTC is enabled (`enable-webrtc`). The desktop field is hidden when WebRTC is disabled. Leave it empty to use the default of 2.5 seconds. Invalid, zero, or negative values also use the default.
+
+**Konum**:
+
+**Desktop** Settings → General → Other → Enable WebRTC P2P connection → Relay fallback delay in seconds
+
+Available since RustDesk 1.5.0
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Positive number of seconds, or empty | 2.5 | `relay-fallback-delay=2.5` |
+
+## Ekran Ayarları
+
+### view-only
+
+This option will set the "view-only" option for every peer after the first connection.
+
+Then the "view-only" option in each peer's settings will control whether the connection is view-only.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → View mode
+2. **Mobil** Settings → Display settings → Other default options → View mode
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `view-only=Y` |
+
+### show-monitors-toolbar
+
+Controls whether to show monitors in toolbar.
+
+![show-monitors-toolbar](/docs/tr/self-host/client-configuration/advanced-settings/images/show-monitors-toolbar.png)
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Show monitors toolbar
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `show-monitors-toolbar=Y` |
+
+### collapse-toolbar
+
+Controls whether the remote toolbar is collapsed after connecting.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Collapse toolbar
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `collapse-toolbar=Y` |
+
+### show-remote-cursor
+
+This option will set the "show-remote-cursor" option for every peer after the first connection.
+
+Then the "show-remote-cursor" option in each peer's settings will control whether the remote cursor is displayed in the remote control page.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Show remote cursor
+2. **Mobil** Settings → Display settings → Other default options → Show remote cursor
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `show-remote-cursor=N` |
+
+### follow-remote-cursor
+
+This option will set the "follow-remote-cursor" option for every peer after the first connection.
+
+Then the "follow-remote-cursor" option in each peer's settings will control whether to follow the remote cursor.
+
+**Preview**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Follow remote cursor
+2. **Mobil** Settings → Display settings → Other default options → Follow remote cursor
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `follow-remote-cursor=Y` |
+
+### follow-remote-window
+
+This option will set the "follow-remote-window" option for every peer after the first connection.
+
+Then the "follow-remote-window" option in each peer's settings will control whether to follow the remote window.
+
+**Preview**: [PR 7717](https://github.com/rustdesk/rustdesk/pull/7717)
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Follow remote window focus
+2. **Mobil** Settings → Display settings → Other default options → Follow remote window focus
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `follow-remote-window=Y` |
+
+### zoom-cursor
+
+This option will set the "zoom-cursor" option for every peer after the first connection.
+
+The "zoom-cursor" option in each peer's settings will then control whether the cursor is scaled based on the current image scale.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Zoom cursor
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `zoom-cursor=Y` |
+
+### show-quality-monitor
+
+This option will set the "show-quality-monitor" option for every peer after the first connection.
+
+The "show-quality-monitor" option in each peer's settings will then control whether to show the quality monitor.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Show quality monitor
+2. **Mobil** Settings → Display settings → Other default options → Show quality monitor
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `show-quality-monitor=Y` |
+
+### disable-audio
+
+This option will set the "disable-audio" option for every peer after the first connection.
+
+The "disable-audio" option in each peer's settings will then control whether to play sound.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Mute
+2. **Mobil** Settings → Display settings → Other default options → Mute
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `disable-audio=Y` |
+
+### enable-file-copy-paste
+
+This option will set the "enable-file-copy-paste" option for every peer after the first connection.
+
+The "enable-file-copy-paste" option in each peer's settings will then control enable file copy and paste in connection.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Enable file copy and paste (Windows only)
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `enable-file-copy-paste=Y` |
+
+### disable-clipboard
+
+This option will set the "disable-clipboard" option for every peer after the first connection.
+
+The "disable-clipboard" option in each peer's settings will then control whether to enable text copy and paste.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Disable clipboard
+2. **Mobil** Settings → Display settings → Other default options → Disable clipboard
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `disable-clipboard=Y` |
+
+### lock-after-session-end
+
+This option will set the "lock-after-session-end" option for every peer after the first connection.
+
+The "lock-after-session-end" option in each peer's settings will then control whether to lock the peer machine after the session ends.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Lock after session end
+2. **Mobil** Settings → Display settings → Other default options → Lock after session end
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `lock-after-session-end=Y` |
+
+### privacy-mode
+
+This option will set the "privacy-mode" option for every peer after the first connection.
+
+The "privacy-mode" option in each peer's settings will then control whether to use privacy mode after connecting.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Privacy mode
+2. **Mobil** Settings → Display settings → Other default options → Privacy mode
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `privacy-mode=Y` |
+
+### i444
+
+This option will set the "i444" option for every peer after the first connection.
+
+The "i444" option in each peer's settings will then control whether to use true color.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → True color (4:4:4)
+2. **Mobil** Settings → Display settings → Other default options → True color (4:4:4)
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `i444=Y` |
+
+### reverse-mouse-wheel
+
+This option will set the "reverse-mouse-wheel" option for every peer after the first connection.
+
+The "reverse-mouse-wheel" option in each peer's settings will then control whether to reverse mouse wheel.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Reverse mouse wheel
+2. **Mobil** Settings → Display settings → Other default options → Reverse mouse wheel
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `reverse-mouse-wheel=Y` |
+
+### swap-left-right-mouse
+
+This option will set the "swap-left-right-mouse" option for every peer after the first connection.
+
+The "swap-left-right-mouse" option in each peer's settings will then control whether to swap left-right mouse button.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Swap left-right mouse button
+2. **Mobil** Settings → Display settings → Other default options → Swap left-right mouse button
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `swap-left-right-mouse=Y` |
+
+### displays-as-individual-windows
+
+This option will set the "displays-as-individual-windows" option for every peer after the first connection.
+
+The "displays-as-individual-windows" option in each peer's settings will then control whether to show displays as individual windows.
+
+**Preview**: [PR 5945](https://github.com/rustdesk/rustdesk/pull/5945)
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Show displays as individual windows
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `displays-as-individual-windows=Y` |
+
+### use-all-my-displays-for-the-remote-session
+
+This option will set the "use-all-my-displays-for-the-remote-session" option for every peer after the first connection.
+
+The "use-all-my-displays-for-the-remote_session" option in each peer's settings will then control whether to use all my displays for the remote session.
+
+**Preview**: [PR 6064](https://github.com/rustdesk/rustdesk/pull/6064)
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Use all my displays for the remote session
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `use-all-my-displays-for-the-remote-session=Y` |
+
+### view-style
+
+This option will set the "view-style" option for every peer after the first connection.
+
+The "view-style" option in each peer's settings will then control the view style.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Default view style
+2. **Mobil** Settings → Display settings → Default view style
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | original, adaptive | original | `view-style=original` |
+
+### scroll-style
+
+This option will set the "scroll-style" option for every peer after the first connection.
+
+The "scroll-style" option in each peer's settings will then control the scroll style.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Default scroll style
+2. **Mobil**
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | scrollauto, scrollbar, scrolledge | scrollauto | `scroll-style=scrollauto` |
+
+**Note**: The `scrolledge` option is available starting from RustDesk 1.4.4.
+
+### edge-scroll-edge-thickness
+
+This option controls the edge thickness when `scroll-style` is set to `scrolledge`. The edge thickness determines the size of the scrollable area at the screen edges.
+
+This option is only effective when `scroll-style=scrolledge`.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Edge scroll edge thickness
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | 20-150 | 100 | `edge-scroll-edge-thickness=100` |
+
+**Note**: This option is available starting from RustDesk 1.4.4.
+
+### image-quality
+
+This option will set the "image-quality" option for every peer after the first connection.
+
+The "image-quality" option in each peer's settings will then control the image quality.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Default image quality
+2. **Mobil** Settings → Display settings → Default image quality
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | best, balanced, low, custom | balanced | `image-quality=balanced` |
+
+### custom-image-quality
+
+This option will set the "custom-image-quality" option for every peer after the first connection.
+
+The "custom-image-quality" option in each peer's settings will then control the image quality if "image-quality" is set to custom.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Default image quality → Custom
+2. **Mobil** Settings → Display settings → Default image quality → Custom
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | [10.0, 2000.0] | 50.0 | `custom-image-quality=50` |
+
+### custom-fps
+
+This option will set the "custom-fps" option for every peer after the first connection.
+
+The "custom-fps" option in each peer's settings will then control the fps if "image-quality" is set to custom.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Default image quality → Custom
+2. **Mobil** Settings → Display settings → Default image quality → Custom
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | [5, 120] | 30 | `custom-fps=30` |
+
+### codec-preference
+
+This option will set the "codec-preference" option for every peer after the first connection.
+
+The "codec-preference" option in each peer's settings will then control codec for images.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Default codec
+2. **Mobil** Settings → Display settings → Default codec
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | auto, vp8, vp9, av1, h264, h265 | auto | `codec-preference=auto` |
+
+**Caution**: Options other than "vp8" and "vp9" may not work. This depends on what your machine supports.
+
+### terminal-persistent
+
+This option will set the "terminal-persistent" option for every peer after the first connection.
+
+The "terminal-persistent" option in each peer's settings will then control whether to keep terminal sessions on disconnect.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Other default options → Keep terminal sessions on disconnect
+2. **Mobil** Settings → Display settings → Other default options → Keep terminal sessions on disconnect
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `terminal-persistent=Y` |
+
+### trackpad-speed
+
+This option will set the "trackpad-speed" option for every peer after the first connection.
+
+The "trackpad-speed" option in each peer's settings will then control the fps if "trackpad-speed" is set to custom.
+
+**Konum**:
+
+1. **Masaüstü** Ayarlar → Ekran → Default trackpad speed
+2. **Mobil** Settings → Display settings → Default trackpad speed
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | [10, 1000] | 100 | `trackpad-speed=100` |
+
+## Diğerleri
+
+### preset-address-book-name & preset-address-book-tag & preset-address-book-alias & preset-address-book-password & preset-address-book-note
+
+Preset address book name, device tag, device alias, device password, device note, https://github.com/rustdesk/rustdesk-server-pro/issues/257.
+You can set preset-address-book-name only if you do not want to set tag.
+Please use valid address book name and tag on your address book page of web console.
+
+| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: | :------: |
+| preset-address-book-name | N | | | `preset-address-book-name=<address book name>` |
+| preset-address-book-tag | N | | | `preset-address-book-tag=<address book tag name>` |
+| preset-address-book-alias | N | | | `preset-address-book-alias=<device alias>` |
+| preset-address-book-password | N | | | `preset-address-book-password=<device password>` |
+| preset-address-book-note | N | | | `preset-address-book-note=<device note>` |
+
+preset-address-book-alias, preset-address-book-password, preset-address-book-note are available in RustDesk client >=1.4.3, pro >= 1.6.6.
+
+### disable-group-panel
+
+Disable group panel (next to address book panel, it is named to "Accessible devices" since 1.3.8) on RustDesk client, https://github.com/rustdesk/rustdesk-server-pro/issues/250.
+
+| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-group-panel | N | Y, N | N | `disable-group-panel=Y` |
+
+### pre-elevate-service
+
+Automatic elevation on run for Windows portable, https://github.com/rustdesk/rustdesk-server-pro/issues/252.
+
+| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: | :------: |
+| pre-elevate-service | N | Y, N | N | `pre-elevate-service=Y` |
+
+### disable-floating-window
+
+When the Android service starts, it will display a floating window, which helps prevent the system from killing the RustDesk service.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-floating-window=Y` |
+
+### floating-window-size
+
+When the Android service starts, it will display a floating window, which helps prevent the system from killing the RustDesk service. When the size is less than 120, the floating window will be difficult to be clicked. A very small size may not be able to keep the background service on some devices.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| [32, 320] | 120 | `floating-window-size=120` |
+
+### floating-window-untouchable
+
+By default, clicking on the floating window will pop up a menu. After setting it to 'untouchable', clicking or swiping will pass through the floating window and be transmitted to the underlying window. After being set to 'untouchable', the position of the floating window cannot be changed, and the system may automatically set the floating window to be semi-transparent. However, this feature may not work in a small number of applications, such as the GitHub app.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `floating-window-untouchable=Y` |
+
+### floating-window-transparency
+
+Android floating windows have adjustable transparency. If you want to enable but hide the floating window, you can set the transparency to 0, the floating window will be automatically set to 'untouchable' in order to pass through click events.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| [0, 10] | 10 | `floating-window-transparency=5` |
+
+### floating-window-svg
+
+If an icon is not set for the Android floating window, it will default to displaying the RustDesk icon.
+When setting, please write the text content of SVG into one line, and pay attention to the [SVG support limitations](https://bigbadaboom.github.io/androidsvg/index.html).
+
+| Default | Example |
+| :------: | :------: |
+| RustDesk icon | `floating-window-svg=<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1717559129252" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4248" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32"><path d="M950.857143 512c0 242.285714-196.571429 438.857143-438.857143 438.857143S73.142857 754.285714 73.142857 512 269.714286 73.142857 512 73.142857s438.857143 196.571429 438.857143 438.857143z" fill="#1296db" p-id="4249"></path></svg>` |
+
+### keep-screen-on
+
+Bu, Android kontrol edilen taraf içindir. Note that keeping the screen on depends on the floating window.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| never, during-controlled, service-on | during-controlled | `keep-screen-on=never` |
+
+### keep-awake-during-incoming-sessions
+
+Gelen uzak masaüstü oturumları sırasında ekranı uyanık tutar. Uygulama uzaktan bağlantılar için aktif olarak kullanılırken cihazın uyku moduna geçmesini önlemeye yardımcı olur.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-incoming-sessions=N` |
+
+### keep-awake-during-outgoing-sessions
+
+Giden uzak masaüstü oturumları sırasında ekranı uyanık tutar. Uygulama uzaktan bağlantılar için aktif olarak kullanılırken cihazın uyku moduna geçmesini önlemeye yardımcı olur.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `keep-awake-during-outgoing-sessions=N` |
+
+### enable-directx-capture
+
+Bu, Windows kontrol edilen taraf içindir. If you don't encounter any problems, it is recommended to use the default settings, which prioritize using DirectX for screenshots instead of using GDI directly.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-directx-capture=N` |
+
+### enable-android-software-encoding-half-scale
+
+Bu, Android kontrol edilen taraf içindir. By default, when the resolution is greater than 1200, hardware encoding uses the original resolution, while software encoding uses half the resolution, as software encoding is slower. This option is used to set whether software encoding should be scaled to half the resolution.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-android-software-encoding-half-scale=N` |
+
+### allow-remote-cm-modification
+
+Controls whether to allow the control side to click on the accept window (connection management window) to accept connections, change permissions, etc.
+
+https://github.com/rustdesk/rustdesk/issues/7425
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-remote-cm-modification=Y` |
+
+### enable-perm-change-in-accept-window
+
+Controls whether users can change permissions in the accept window (connection management window) before accepting an incoming session.
+
+On desktop, this affects all permissions in the accept window (connection management window). On Android, it affects the following permissions: Transfer file, Audio capture, and Enable clipboard. Screen capture and Input control are not affected.
+
+**Preview**: https://github.com/rustdesk/rustdesk/pull/14875
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-perm-change-in-accept-window=Y` |
+
+### remove-preset-password-warning
+
+Controls whether to remove the security warning on GUI when there is preset password in custom client. 
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/286
+
+https://github.com/rustdesk/rustdesk/discussions/7956
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `remove-preset-password-warning=Y` |
+
+### hide-general-settings
+
+Controls whether to hide the `General` tab of the settings page. Unlike the other `hide-*-settings` options, this one also works when `Disable settings` is enabled, because `Disable settings` does not hide the `General` tab.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/1001
+
+Available since RustDesk 1.5.0
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-general-settings=Y` |
+
+### hide-security-settings / hide-network-settings / hide-server-settings / hide-proxy-settings / hide-websocket-settings / hide-remote-printer-settings
+
+Controls whether to hide some settings. Please ensure `Disable settings` is turned off, otherwise these won't work.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/263
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/276
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-security-settings=Y` |
+
+### hide-username-on-card
+
+Controls whether to show username in the list of devices. Because sometimes, the username is too long, will hide the other info.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/284#issuecomment-2216521407
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-username-on-card=Y` |
+
+### hide-help-cards
+
+Controls whether to show UAC / permission warnings on GUI.
+
+https://github.com/rustdesk/rustdesk/issues/8687
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-help-cards=Y` |
+
+### display-name
+
+Change your display name which will be shown on the popup when you connect to remote device. By default it displays login user's name first, otherwise it displays your OS username.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/277
+
+### disable-udp
+
+Yalnızca TCP kullanılıp kullanılmayacağını denetler. Artık UDP 21116 kullanılmaz, yerine TCP 21116 kullanılır.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-udp=Y` |
+
+### preset-user-name / preset-strategy-name / preset-device-group-name / preset-device-username / preset-device-name / preset-note
+
+Assign user / strategy / device group / device username / device-name(hostname) / note to device. You can also do this via [command line](/docs/tr/self-host/rustdesk-server-pro/console/#assign-device-usersgroupsstrategies-to-devices).
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/304
+
+device group is available in RustDesk client >=1.3.8, pro >= 1.5.0
+
+preset-device-username, preset-device-name, preset-note are available in RustDesk client >=1.4.3, pro >= 1.6.6. 
+
+### default-connect-password
+
+You use the `default connection password` to establish connections to remote devices. This password is configured on the controlling side and should not be confused with any [preset password](https://github.com/rustdesk/rustdesk/wiki/FAQ#how-can-we-set-up-a-client-with-a-fixed-password-for-unattended-remote-access) found on the controlled (incoming-only) client.
+
+e.g. `default-connect-password=abcd1234`
+
+### enable-trusted-devices
+
+Güvenilen cihazların 2FA doğrulamasını atlamasına izin verir.
+
+https://github.com/rustdesk/rustdesk/discussions/8513#discussioncomment-10234494
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `enable-trusted-devices=N` |
+
+### hide-tray
+
+Sistem tepsisindeki (systray) tepsi simgesini devre dışı bırakır.
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/332
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-tray=Y` |
+
+### hide-stop-service
+
+Hide stop/toggle service controls while the service is running. This is mainly for custom clients to prevent users from stopping the service from the UI (desktop settings, tray menu, Android server page, and Android floating window menu).
+
+When the service is stopped, the start/enable entry remains visible.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `hide-stop-service=Y` |
+
+### one-way-clipboard-redirection
+
+Kontrol edilen taraftan kontrol eden tarafa pano senkronizasyonunu devre dışı bırakır; RustDesk istemcisi >=1.3.1 sürümünde mevcuttur (kontrol edilen taraf).
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-clipboard-redirection=Y` |
+
+### one-way-file-transfer
+
+Kontrol edilen taraftan kontrol eden tarafa dosya aktarımını devre dışı bırakır; RustDesk istemcisi >=1.3.1 sürümünde mevcuttur (kontrol edilen taraf).
+
+https://github.com/rustdesk/rustdesk/discussions/7837
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `one-way-file-transfer=Y` |
+
+
+### sync-init-clipboard
+
+If sync initial clipboard when establishing connection (only from controlling side to controlled side), available in RustDesk client >=1.3.1 (controlling side)
+
+https://github.com/rustdesk/rustdesk/discussions/9010
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `sync-init-clipboard=Y` |
+
+### allow-logon-screen-password
+
+If allow password input on logon screen when [click-only approve mode](/docs/tr/self-host/client-configuration/advanced-settings/#approve-mode) is used, available in RustDesk client >=1.3.1 (controlled side)
+
+When enabled, permanent password is also allowed when the current session is in a logon or lock-screen state. This applies to Click, Password, and Both approve modes. RustDesk client >=1.4.7 (controlled side)
+
+https://github.com/rustdesk/rustdesk/discussions/9269
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-logon-screen-password=Y` |
+
+### allow-https-21114
+
+Typically, HTTPS uses port 443. When the API server's port is mistakenly set to 21114, RustDesk client will remove the 21114 port setting by default. Setting the option to Y allows the use of 21114 as the HTTPS port. Available in RustDesk client >=1.3.9.
+
+https://github.com/rustdesk/rustdesk-server-pro/discussions/570
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-https-21114=Y` |
+
+### allow-d3d-render
+
+D3D render can get high FPS and reduce the cpu usage, but the remote control screen may be black on some devices. Available in RustDesk client >=1.3.9, windows only.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-d3d-render=Y` |
+
+### allow-hostname-as-id
+
+[Use hostname as id](https://github.com/rustdesk/rustdesk-server-pro/discussions/483), spaces in the hostname are replaced with '-'. This is not 100% guaranteed and only occurs the first time the RustDesk client is run (i.e., on a newly installed client); if a conflict occurs, a random ID will be assigned. 
+
+Available in RustDesk client version 1.4.0 and later. 
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-hostname-as-id=Y` |
+
+### allow-websocket
+
+Use WebSocket protocol to connect server and client. Only available in RustDesk client >=1.4.0 and Pro server >= 1.5.7. Note that WebSocket only supports relay connection.
+
+To make WebSocket work, you need to configure your reverse proxy correctly, /docs/tr/self-host/rustdesk-server-pro/faq/#8-add-websocket-secure-wss-support-for-the-id-server-and-relay-server-to-enable-secure-communication-for-all-platforms
+
+**Konum**:
+
+**Desktop** Settings → Network → Use Websocket
+**Mobile** Settings → Use Websocket
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-websocket=Y` |
+
+### allow-numeric-one-time-password
+
+Bu seçenek yalnızca sayılardan oluşan tek kullanımlık parolaların kullanımını etkinleştirir veya devre dışı bırakır.
+Only available in RustDesk client >=1.4.1 and Pro server >= 1.5.9.
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/685
+
+**Preview**: https://github.com/rustdesk/rustdesk/pull/11846
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-numeric-one-time-password=Y` |
+
+### register-device
+
+Do not register the device, you will not see it in the devices page on web console. 
+
+**Only available in Pro server >= 1.6.0 and requires [custom2 license](https://rustdesk.com/pricing#custom2) and number of concurrent connections >= 2.**
+
+If `register-device=N`, below will not work for this device.
+- Log in
+- `--assign` command
+- `preset-address-book-name`, `preset-address-book-tag`, `preset-address-book-alias`, `preset-address-book-password`, `preset-address-book-note` `preset-user-name`, `preset-strategy-name`, `preset-device-group-name`, `preset-device-username`, `preset-device-name`, `preset-note`
+- Audit Logs
+- Strategy
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/discussions/672 and https://github.com/rustdesk/rustdesk-server-pro/discussions/182
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | Y | `register-device=N` |
+
+### main-window-always-on-top
+
+Ana pencereyi her zaman en üstte tutar.
+
+**Discussion**: https://github.com/rustdesk/rustdesk-server-pro/issues/761
+
+Only available in RustDesk client 1.4.2.
+
+| Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: |
+| N | Y, N | N | `main-window-always-on-top=N` |
+
+### relay-server
+
+https://github.com/rustdesk/rustdesk-server-pro/issues/776#issuecomment-3306524913
+
+### disable-discovery-panel
+
+Disable `Discovered` panel (next to `Favorites` panel) on RustDesk client
+
+| Option | Kurulum gerekli | Değerler | Varsayılan | Örnek |
+| :------: | :------: | :------: | :------: | :------: |
+| disable-discovery-panel | N | Y, N | N | `disable-discovery-panel=Y` |
+
+### touch-mode
+
+Controls whether to use touch mode or mouse mode during remote control sessions.
+
+#### Version Behavior Differences
+
+##### RustDesk (Controlling Side) < 1.4.3
+
+After the first connection, this option sets the "touch-mode" setting for each peer. Thereafter, the individual settings of each peer determine whether to use touch mode or mouse mode.
+
+**Konum**:
+
+1. **Desktop**
+2. **Mobil** Settings → Display settings → Other default options → Touch mode
+
+##### RustDesk (Controlling Side) >= 1.4.3
+
+This option uniformly controls whether all peer devices use touch mode or mouse mode, overriding individual device settings.
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `touch-mode=Y` |
+
+### show-virtual-mouse
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Controls the display of the virtual mouse when mobile -> desktop.
+
+**Konum**:
+
+1. **Desktop**
+2. **Mobil** Remote session -> bottom navigation bar -> gesture helper
+
+Available since RustDesk 1.4.3
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-mouse=Y` |
+
+**Note**: This option should be configured in **Default settings** rather than **Override settings**.
+
+### show-virtual-joystick
+
+https://github.com/rustdesk/rustdesk/pull/12911
+
+Controls the display of the virtual joystick when mobile -> desktop.
+
+This option requires the **show-virtual-mouse** to be enabled.
+
+**Konum**:
+
+1. **Desktop**
+2. **Mobil** Remote session -> bottom navigation bar -> gesture helper
+
+Available since RustDesk 1.4.3
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `show-virtual-joystick=Y` |
+
+**Note**: This option should be configured in **Default settings** rather than **Override settings**.
+
+### allow-insecure-tls-fallback
+
+By default, RustDesk verifies the server certificate for protocols using TLS.
+
+With this option enabled, RustDesk will fall back to skipping the verification step and proceed in case of verification failure.
+
+**Konum**:
+
+**Desktop** Settings → Network → Allow insecure TLS fallback
+**Mobile** Settings → Allow insecure TLS fallback
+
+Available since RustDesk 1.4.4
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-insecure-tls-fallback=Y` |
+
+### allow-ask-for-note
+
+Bağlantı sona erdiğinde kontrol eden taraftan bir not girmesini ister.
+
+If you enable this option from the client UI and are not logged in yet, RustDesk asks you to log in first.
+
+**Konum**:
+
+1. **Desktop** Settings → Other → Ask for note at end of connection
+2. **Mobil** Settings → Ask for note at end of connection
+
+Available since RustDesk 1.4.4.
+
+**Discussion**: https://github.com/rustdesk/rustdesk/discussions/14606
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-ask-for-note=Y` |
+
+### disable-change-permanent-password
+
+Kalıcı parolayı değiştirme yeteneğini devre dışı bırakır. Etkinleştirildiğinde kullanıcılar arayüz veya komut satırı üzerinden kalıcı parolayı ayarlayamaz veya değiştiremez.
+
+Available since RustDesk 1.4.5
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-change-permanent-password=Y` |
+
+### disable-change-id
+
+Cihaz kimliğini (ID) değiştirme yeteneğini devre dışı bırakır. Etkinleştirildiğinde kullanıcılar arayüz veya komut satırı üzerinden kimliği değiştiremez.
+
+Available since RustDesk 1.4.5
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-change-id=Y` |
+
+### disable-unlock-pin
+
+Ayarların kilidini açmak için PIN kullanımını devre dışı bırakır. Etkinleştirildiğinde, bir PIN belirlenmiş olsa bile kullanıcıların ayarların kilidini açmak için sistem yöneticisi ayrıcalıklarını kullanması gerekir.
+
+Available since RustDesk 1.4.5
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `disable-unlock-pin=Y` |
+
+### allow-command-line-settings-when-settings-disabled
+
+Allow configuration via command-line settings when `Disable settings` is enabled in custom client. When set to Y, only the UI settings are disabled, but command-line settings can still be used to configure the client.
+
+Available since RustDesk 1.4.7
+
+| Values | Default | Example |
+| :------: | :------: | :------: |
+| Y, N | N | `allow-command-line-settings-when-settings-disabled=Y` |
